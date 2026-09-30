@@ -31,6 +31,8 @@
   --maxw: 1120px;
   --gut:  24px;
   --nav-h: 60px;
+  --project-card-h: 180px;
+  --project-page-h: calc( var(--project-card-h) * 3 );
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -497,19 +499,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .chip[aria-pressed="true"] .chip__n { color: #fff; font-size: .5625rem; }
 
-.project.is-filtered,
-.project.is-collapsed { display: none; }
-
-.projects__more {
-  display: flex;
-  justify-content: center;
-  padding: 20px 16px 6px;
-}
-.projects__more[hidden] { display: none; }
-
-.btn--more { gap: 8px; }
-.btn--more .ic { transition: transform .2s ease; }
-.btn--more[aria-expanded="true"] .ic { transform: rotate(180deg); }
+.project[hidden] { display: none; }
 
 .projects__empty {
   padding: 34px 16px;
@@ -550,7 +540,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--accent);
 }
 
-.projects { border-top: 1px solid var(--border); }
+.projects {
+  border-top: 1px solid var(--border);
+  min-height: var(--project-page-h);
+}
+.projects.is-measuring { min-height: 0; }
+.projects.is-measuring .project { min-height: 0; }
 
 .project {
   display: grid;
@@ -562,6 +557,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border-bottom: 1px solid var(--border);
   border-radius: var(--r);
   transition: background .18s ease;
+  min-height: var(--project-card-h, 180px);
 }
 .project:hover {
   background: linear-gradient(90deg,
@@ -730,16 +726,16 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--muted);
 }
 
-.certs__nav {
+.pager {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 18px;
   margin-top: 20px;
 }
-.certs__nav[hidden] { display: none; }
+.pager[hidden] { display: none; }
 
-.certs__arrow {
+.pager__arrow {
   display: grid;
   place-items: center;
   width: 38px; height: 38px;
@@ -749,10 +745,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--text-2);
   transition: color .15s ease, border-color .15s ease, background-color .15s ease;
 }
-.certs__arrow:hover:not(:disabled) { color: var(--accent-hi); border-color: var(--accent); background: var(--accent-dim); }
-.certs__arrow:disabled { opacity: .4; cursor: default; }
+.pager__arrow:hover:not(:disabled) { color: var(--accent-hi); border-color: var(--accent); background: var(--accent-dim); }
+.pager__arrow:disabled { opacity: .4; cursor: default; }
 
-.certs__count {
+.pager__count {
   font-family: var(--font-mono);
   font-size: .8125rem;
   font-variant-numeric: tabular-nums;
@@ -760,7 +756,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   min-width: 4ch;
   text-align: center;
 }
-.certs__sep { margin-inline: 4px; color: var(--border-strong); }
+.pager__sep { margin-inline: 4px; color: var(--border-strong); }
 
 .lightbox {
   width: min(1000px, calc(100% - 32px));
@@ -979,7 +975,7 @@ body.is-locked { overflow: hidden; }
 }
 
 @media (max-width: 720px) {
-  :root { --gut: 20px; }
+  :root { --gut: 20px; --project-card-h: 260px; }
   .section { padding-block: 60px; }
 
   .nav__links { gap: 0; }
@@ -1019,7 +1015,7 @@ body.is-locked { overflow: hidden; }
   .chip { padding: 10px 14px; }
 
   .project__links a { padding: 8px 0; }
-  .certs__arrow { width: 44px; height: 44px; }
+  .pager__arrow { width: 44px; height: 44px; }
   .certs__zoom { opacity: 1; transform: translate(-50%, 0); }
   .lightbox__btn { width: 40px; height: 40px; }
   .lightbox__nav { width: 46px; height: 46px; }
@@ -1080,8 +1076,11 @@ body.is-locked { overflow: hidden; }
   .certs__track { grid-template-columns: 1fr 1fr; gap: 12px; }
   .certs__card { break-inside: avoid; }
   .certs__zoom { display: none; }
-  .certs__nav { display: none !important; }
+  .pager { display: none !important; }
   .certs__item[hidden] { display: block !important; }
+  .projects { min-height: 0; }
+  .project { min-height: 0; }
+  .project[hidden] { display: grid !important; }
   .section, .contact, .project { break-inside: avoid; }
   .project:hover { background: none; }
   .tags li { border-color: #bbb; color: #333; }

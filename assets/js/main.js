@@ -113,19 +113,27 @@
   var filterStatus = $('#filter-status');
   var projects = $$('.project');
   var emptyState = $('#projects-empty');
-  var moreBox = $('#projects-more-box');
-  var moreBtn = $('#projects-more');
-  var moreLabel = $('#projects-more-label');
-  var moreStatus = $('#projects-more-status');
-  var PREVIEW = 3;
+  var pager = $('#projects-nav');
+  var prevBtn = $('#projects-prev');
+  var nextBtn = $('#projects-next');
+  var pageIndex = $('#projects-index');
+  var pageTotal = $('#projects-total');
+  var pageStatus = $('#projects-page-status');
+  var PER_PAGE = 3;
   var activeTag = '*';
-  var expanded = false;
+  var page = 0;
 
   if (projects.length) {
     var counts = Object.create(null);
-    projects.forEach(function (project) {
-      $$('.tags li', project).forEach(function (tag) {
-        var name = tag.textContent.trim();
+
+    var projectTags = projects.map(function (project) {
+      return $$('.tags li', project).map(function (tag) {
+        return tag.textContent.trim();
+      });
+    });
+
+    projectTags.forEach(function (names) {
+      names.forEach(function (name) {
         counts[name] = (counts[name] || 0) + 1;
       });
     });
@@ -153,51 +161,73 @@
       return btn;
     }
 
-    function matches(project) {
-      return activeTag === '*' ||
-        $$('.tags li', project).some(function (t) {
-          return t.textContent.trim() === activeTag;
-        });
+    function isMatch(index) {
+      return activeTag === '*' || projectTags[index].indexOf(activeTag) !== -1;
     }
 
-    function render(reveal) {
-      var shown = 0;
-      var hidden = 0;
+    var list = $('.projects');
+    var resizeTimer = null;
 
-      projects.forEach(function (project) {
-        var match = matches(project);
+    function measureCard() {
+      if (!list) return;
 
-        if (match && (expanded || shown < PREVIEW)) {
-          project.classList.remove('is-filtered', 'is-collapsed');
-          if (reveal) project.classList.add('is-in');
-          shown++;
-        } else {
-          project.classList.add(match ? 'is-collapsed' : 'is-filtered');
-          if (match) hidden++;
+      var restore = [];
+      var tallest = 0;
+      var i;
+
+      list.classList.add('is-measuring');
+
+      for (i = 0; i < projects.length; i++) {
+        if (projects[i].hidden) {
+          restore.push(projects[i]);
+          projects[i].hidden = false;
         }
+        tallest = Math.max(tallest, projects[i].offsetHeight);
+      }
+
+      restore.forEach(function (project) { project.hidden = true; });
+      list.classList.remove('is-measuring');
+
+      if (tallest) {
+        list.style.setProperty('--project-card-h', tallest + 'px');
+        list.style.setProperty('--project-page-h', tallest * PER_PAGE + 'px');
+      }
+    }
+
+    function showPage(target) {
+      var matched = [];
+      var i;
+
+      for (i = 0; i < projects.length; i++) {
+        if (isMatch(i)) matched.push(i);
+      }
+
+      var pages = Math.max(1, Math.ceil(matched.length / PER_PAGE));
+      page = ((target % pages) + pages) % pages;
+
+      projects.forEach(function (project, index) {
+        var slot = matched.indexOf(index);
+        var onPage = slot !== -1 &&
+          slot >= page * PER_PAGE &&
+          slot < (page + 1) * PER_PAGE;
+
+        project.hidden = !onPage;
+        if (onPage) project.classList.add('is-in');
       });
 
-      if (emptyState) emptyState.hidden = shown !== 0;
+      if (emptyState) emptyState.hidden = matched.length !== 0;
 
-      if (moreBox) {
-        var showToggle = hidden > 0 || expanded;
-        moreBox.hidden = !showToggle;
-        if (showToggle) {
-          moreBtn.setAttribute('aria-expanded', String(expanded));
-          moreLabel.textContent = expanded
-            ? 'Show fewer'
-            : 'Show ' + hidden + ' more';
-        }
-      }
+      if (pager) pager.hidden = pages < 2;
+      if (pageIndex) pageIndex.textContent = String(page + 1);
+      if (pageTotal) pageTotal.textContent = String(pages);
 
       if (filterStatus) {
-        filterStatus.textContent = shown + ' of ' + projects.length +
-          (activeTag === '*' ? ' projects' : ' projects tagged ' + activeTag) + ' shown.';
+        filterStatus.textContent = matched.length + ' of ' + projects.length +
+          (activeTag === '*' ? ' projects' : ' projects tagged ' + activeTag) +
+          (matched.length > PER_PAGE ? ', page ' + (page + 1) + ' of ' + pages + '.' : '.');
       }
-      if (moreStatus && moreBtn && !moreBox.hidden) {
-        moreStatus.textContent = expanded
-          ? 'All matching projects shown.'
-          : hidden + ' more project' + (hidden === 1 ? '' : 's') + ' hidden.';
+      if (pageStatus) {
+        pageStatus.textContent = 'Page ' + (page + 1) + ' of ' + pages + '.';
       }
     }
 
@@ -208,26 +238,46 @@
       chipBox.addEventListener('click', function (event) {
         var chip = event.target.closest('.chip');
         if (!chip) return;
-        activeTag = chip.dataset.tag;
+
+        var next = chip.dataset.tag;
+        var isActive = chip.getAttribute('aria-pressed') === 'true';
+        activeTag = isActive ? '*' : next;
+
+        var all = chipBox.querySelector('.chip[data-tag="*"]');
+        var pressed = activeTag === '*' ? all : chip;
 
         $$('.chip', chipBox).forEach(function (c) {
-          c.setAttribute('aria-pressed', String(c === chip));
+          c.setAttribute('aria-pressed', String(c === pressed));
         });
 
-        render(false);
+        showPage(0);
       });
 
       filterBox.hidden = false;
     }
 
-    if (moreBtn) {
-      moreBtn.addEventListener('click', function () {
-        expanded = !expanded;
-        render(true);
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        showPage(page - 1);
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        showPage(page + 1);
       });
     }
 
-    render(false);
+    showPage(0);
+    measureCard();
+
+    window.addEventListener('resize', function () {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(measureCard, 150);
+    });
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(measureCard);
+    }
   }
 
   var copyBtn = $('#copy-btn');
@@ -300,22 +350,22 @@
   var lbVerify = $('#lightbox-verify');
 
   if (certTrack && certItems.length) {
-    var PER_PAGE = 2;
-    var pages = Math.ceil(certItems.length / PER_PAGE);
-    var page = 0;
+    var PER_CERT_PAGE = 2;
+    var certPages = Math.ceil(certItems.length / PER_CERT_PAGE);
+    var certPage = 0;
     var lbIndexAt = 0;
 
-    function showPage(next) {
-      page = (next + pages) % pages;
+    function showCertPage(next) {
+      certPage = (next + certPages) % certPages;
 
       certItems.forEach(function (item, i) {
-        item.hidden = i < page * PER_PAGE || i >= (page + 1) * PER_PAGE;
+        item.hidden = i < certPage * PER_CERT_PAGE || i >= (certPage + 1) * PER_CERT_PAGE;
       });
 
-      if (certIndex) certIndex.textContent = String(page + 1);
-      if (certTotal) certTotal.textContent = String(pages);
-      if (certNav) certNav.hidden = pages < 2;
-      if (certStatus) certStatus.textContent = 'Showing certificate ' + (page + 1) + ' of ' + pages + '.';
+      if (certIndex) certIndex.textContent = String(certPage + 1);
+      if (certTotal) certTotal.textContent = String(certPages);
+      if (certNav) certNav.hidden = certPages < 2;
+      if (certStatus) certStatus.textContent = 'Showing certificate ' + (certPage + 1) + ' of ' + certPages + '.';
     }
 
     function fillLightbox(index) {
@@ -377,8 +427,8 @@
       fillLightbox(lbIndexAt);
     }
 
-    if (certPrev) certPrev.addEventListener('click', function () { showPage(page - 1); });
-    if (certNext) certNext.addEventListener('click', function () { showPage(page + 1); });
+    if (certPrev) certPrev.addEventListener('click', function () { showCertPage(certPage - 1); });
+    if (certNext) certNext.addEventListener('click', function () { showCertPage(certPage + 1); });
 
     certTrack.addEventListener('click', function (event) {
       var card = event.target.closest('[data-certs-open]');
@@ -407,6 +457,6 @@
       });
     }
 
-    showPage(0);
+    showCertPage(0);
   }
 })();

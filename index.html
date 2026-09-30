@@ -141,7 +141,7 @@
 
       <div class="projects" id="projects-list">
 
-        <article class="project reveal" id="p-01">
+        <article class="project" id="p-01">
           <p class="project__id">P-01</p>
           <div class="project__body">
             <h3 class="project__title">ReCheck-Integrity</h3>
@@ -158,15 +158,85 @@
           <p class="project__meta">2026 &middot; Solo Project</p>
         </article>
 
+        <article class="project" id="p-02">
+          <p class="project__id">P-02</p>
+          <div class="project__body">
+            <h3 class="project__title">Coming Soon</h3>
+            <p class="project__desc">
+             Coming Soon
+            </p>
+            <ul class="tags">
+              <li></li><li></li><li></li>
+            </ul>
+            <p class="project__links">
+              <a href="https://github.com/1RenXc/ReCheck-Integrity">Repository <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg></a>
+            </p>
+          </div>
+          <p class="project__meta">- &middot; -</p>
+        </article>
+
+        <article class="project" id="p-03">
+          <p class="project__id">P-03</p>
+          <div class="project__body">
+            <h3 class="project__title">Coming Soon</h3>
+            <p class="project__desc">
+              Coming Soon
+            </p>
+            <ul class="tags">
+              <li></li><li></li>
+            </ul>
+            <p class="project__links">
+              <a href="https://github.com/1RenXc">Repository <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg></a>
+            </p>
+          </div>
+          <p class="project__meta">- &middot; -</p>
+        </article>
+
+        <article class="project" id="p-04">
+          <p class="project__id">P-04</p>
+          <div class="project__body">
+            <h3 class="project__title">Coming Soon</h3>
+            <p class="project__desc">
+              Coming Soon
+            <ul class="tags">
+              <li></li><li></li><li></li>
+            </ul>
+            <p class="project__links">
+              <a href="https://github.com/1RenXc">Repository <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg></a>
+            </p>
+          </div>
+          <p class="project__meta">- &middot; -</p>
+        </article>
+
+        <article class="project" id="p-05">
+          <p class="project__id">P-05</p>
+          <div class="project__body">
+            <h3 class="project__title">Coming Soon</h3>
+            <p class="project__desc">
+              Coming Soon
+            </p>
+            <ul class="tags">
+              <li></li><li></li><li></li>
+            </ul>
+            <p class="project__links">
+              <a href="https://github.com/1RenXc">Repository <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg></a>
+            </p>
+          </div>
+          <p class="project__meta">- &middot; -</p>
+        </article>
       </div>
 
-      <div class="projects__more" id="projects-more-box" hidden>
-        <button class="btn btn--more" type="button" id="projects-more"
-                aria-expanded="false" aria-controls="projects-list">
-          <span id="projects-more-label">Show more</span>
-          <svg class="ic ic--xs" aria-hidden="true"><use href="#i-chevron"/></svg>
+      <div class="pager" id="projects-nav" hidden>
+        <button class="pager__arrow" type="button" id="projects-prev" aria-label="Previous projects">
+          <svg class="ic" aria-hidden="true"><use href="#i-prev"/></svg>
         </button>
-        <p class="sr-only" id="projects-more-status" role="status"></p>
+        <p class="pager__count">
+          <span id="projects-index">1</span><span class="pager__sep">/</span><span id="projects-total">1</span>
+        </p>
+        <button class="pager__arrow" type="button" id="projects-next" aria-label="Next projects">
+          <svg class="ic" aria-hidden="true"><use href="#i-next"/></svg>
+        </button>
+        <p class="sr-only" id="projects-page-status" role="status"></p>
       </div>
 
       <p class="projects__empty" id="projects-empty" hidden>
@@ -257,14 +327,14 @@
 
           </ol>
 
-        <div class="certs__nav" id="certs-nav" hidden>
-          <button class="certs__arrow" type="button" id="certs-prev" aria-label="Previous certificate">
+        <div class="pager" id="certs-nav" hidden>
+          <button class="pager__arrow" type="button" id="certs-prev" aria-label="Previous certificate">
             <svg class="ic" aria-hidden="true"><use href="#i-prev"/></svg>
           </button>
-          <p class="certs__count">
-            <span id="certs-index">1</span><span class="certs__sep">/</span><span id="certs-total">1</span>
+          <p class="pager__count">
+            <span id="certs-index">1</span><span class="pager__sep">/</span><span id="certs-total">1</span>
           </p>
-          <button class="certs__arrow" type="button" id="certs-next" aria-label="Next certificate">
+          <button class="pager__arrow" type="button" id="certs-next" aria-label="Next certificate">
             <svg class="ic" aria-hidden="true"><use href="#i-next"/></svg>
           </button>
         </div>
