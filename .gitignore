@@ -1,0 +1,8 @@
+# nothing to build — but keep local cruft out
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+.idea/
+.vscode/
