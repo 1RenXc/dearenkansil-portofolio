@@ -129,6 +129,8 @@
     var projectTags = projects.map(function (project) {
       return $$('.tags li', project).map(function (tag) {
         return tag.textContent.trim();
+      }).filter(function (name) {
+        return name !== '';
       });
     });
 
@@ -205,11 +207,14 @@
       var pages = Math.max(1, Math.ceil(matched.length / PER_PAGE));
       page = ((target % pages) + pages) % pages;
 
+      var canPaginate = !!pager && !!prevBtn && !!nextBtn;
+
       projects.forEach(function (project, index) {
         var slot = matched.indexOf(index);
-        var onPage = slot !== -1 &&
-          slot >= page * PER_PAGE &&
-          slot < (page + 1) * PER_PAGE;
+        var onPage = !canPaginate ||
+          (slot !== -1 &&
+            slot >= page * PER_PAGE &&
+            slot < (page + 1) * PER_PAGE);
 
         project.hidden = !onPage;
         if (onPage) project.classList.add('is-in');
