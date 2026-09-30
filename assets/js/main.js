@@ -279,4 +279,134 @@
       }
     });
   }
+
+  var certTrack = $('#certs-track');
+  var certItems = $$('[data-certs-item]', certTrack);
+  var certNav = $('#certs-nav');
+  var certPrev = $('#certs-prev');
+  var certNext = $('#certs-next');
+  var certIndex = $('#certs-index');
+  var certTotal = $('#certs-total');
+  var certStatus = $('#certs-status');
+
+  var lightbox = $('#certs-lightbox');
+  var lbImg = $('#lightbox-img');
+  var lbTitle = $('#lightbox-title');
+  var lbSub = $('#lightbox-sub');
+  var lbIndex = $('#lightbox-index');
+  var lbTotal = $('#lightbox-total');
+  var lbPrev = $('#lightbox-prev');
+  var lbNext = $('#lightbox-next');
+  var lbVerify = $('#lightbox-verify');
+
+  if (certTrack && certItems.length) {
+    var PER_PAGE = 2;
+    var pages = Math.ceil(certItems.length / PER_PAGE);
+    var page = 0;
+    var lbIndexAt = 0;
+
+    function showPage(next) {
+      page = (next + pages) % pages;
+
+      certItems.forEach(function (item, i) {
+        item.hidden = i < page * PER_PAGE || i >= (page + 1) * PER_PAGE;
+      });
+
+      if (certIndex) certIndex.textContent = String(page + 1);
+      if (certTotal) certTotal.textContent = String(pages);
+      if (certNav) certNav.hidden = pages < 2;
+      if (certStatus) certStatus.textContent = 'Showing certificate ' + (page + 1) + ' of ' + pages + '.';
+    }
+
+    function fillLightbox(index) {
+      var item = certItems[index];
+      if (!item) return;
+
+      var card = $('[data-certs-open]', item);
+      var img = $('.certs__img', item);
+      var title = (card && card.dataset.title) || '';
+      var sub = (card && card.dataset.sub) || '';
+      var credId = (card && card.dataset.id) || '';
+      var verify = (card && card.dataset.verify) || '';
+      var src = img ? (img.currentSrc || img.getAttribute('src')) : '';
+
+      if (credId && credId !== '—') sub += (sub ? ' \u00b7 ' : '') + 'ID ' + credId;
+
+      if (lbImg && src) {
+        lbImg.setAttribute('src', src);
+        lbImg.alt = title;
+      }
+      if (lbTitle) lbTitle.textContent = title;
+      if (lbSub) lbSub.textContent = sub;
+      if (lbVerify) {
+        if (verify) {
+          lbVerify.hidden = false;
+          lbVerify.setAttribute('href', verify);
+        } else {
+          lbVerify.hidden = true;
+        }
+      }
+      if (lbIndex) lbIndex.textContent = String(index + 1);
+      if (lbTotal) lbTotal.textContent = String(certItems.length);
+      if (lbPrev) lbPrev.hidden = certItems.length < 2;
+      if (lbNext) lbNext.hidden = certItems.length < 2;
+    }
+
+    function openLightbox(index) {
+      lbIndexAt = index;
+      fillLightbox(index);
+
+      if (!lightbox || typeof lightbox.showModal !== 'function') {
+        var card = $('[data-certs-open]', certItems[index]);
+        var img = card && $('.certs__img', card);
+        if (img) window.open(img.currentSrc || img.src, '_blank', 'noopener');
+        return;
+      }
+
+      lightbox.showModal();
+      document.body.classList.add('is-locked');
+    }
+
+    function closeLightbox() {
+      if (lightbox && lightbox.open) lightbox.close();
+      document.body.classList.remove('is-locked');
+    }
+
+    function stepLightbox(delta) {
+      lbIndexAt = (lbIndexAt + delta + certItems.length) % certItems.length;
+      fillLightbox(lbIndexAt);
+    }
+
+    if (certPrev) certPrev.addEventListener('click', function () { showPage(page - 1); });
+    if (certNext) certNext.addEventListener('click', function () { showPage(page + 1); });
+
+    certTrack.addEventListener('click', function (event) {
+      var card = event.target.closest('[data-certs-open]');
+      if (!card) return;
+      var index = certItems.indexOf(card.closest('[data-certs-item]'));
+      if (index > -1) openLightbox(index);
+    });
+
+    if (lightbox) {
+      lightbox.addEventListener('close', function () {
+        document.body.classList.remove('is-locked');
+      });
+
+      lightbox.addEventListener('click', function (event) {
+        if (event.target === lightbox || event.target.closest('[data-lb-close]')) {
+          closeLightbox();
+          return;
+        }
+        if (event.target.closest('#lightbox-prev')) { stepLightbox(-1); return; }
+        if (event.target.closest('#lightbox-next')) { stepLightbox(1); }
+      });
+
+      lightbox.addEventListener('keydown', function (event) {
+        if (event.key === 'ArrowLeft') { event.preventDefault(); stepLightbox(-1); }
+        if (event.key === 'ArrowRight') { event.preventDefault(); stepLightbox(1); }
+      });
+    }
+
+    showPage(0);
+  }
 })();
