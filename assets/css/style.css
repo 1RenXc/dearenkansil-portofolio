@@ -397,10 +397,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .socials--wide { margin-top: 20px; flex-wrap: wrap; }
 .socials--wide a {
   width: auto;
+  height: auto;
+  min-height: 40px;
   grid-auto-flow: column;
   gap: 9px;
   padding: 9px 14px;
   font-size: .875rem;
+  white-space: nowrap;
   color: var(--text-2);
 }
 .socials--wide a:hover { color: var(--accent-hi); }
@@ -822,7 +825,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .certs td:last-child a { padding: 9px; }
   .contact__email { padding-block: 4px; }
   .copy { padding: 11px 16px; }
-  .socials a { width: 44px; height: 44px; }
+  .socials:not(.socials--wide) a { width: 44px; height: 44px; }
+  .socials--wide a { min-height: 44px; }
 }
 
 @media (max-width: 380px) {
