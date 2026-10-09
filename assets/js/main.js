@@ -173,25 +173,19 @@
     function measureCard() {
       if (!list) return;
 
-      var restore = [];
       var tallest = 0;
       var i;
 
       list.classList.add('is-measuring');
 
       for (i = 0; i < projects.length; i++) {
-        if (projects[i].hidden) {
-          restore.push(projects[i]);
-          projects[i].hidden = false;
-        }
+        if (projects[i].hidden) continue;
         tallest = Math.max(tallest, projects[i].offsetHeight);
       }
 
-      restore.forEach(function (project) { project.hidden = true; });
       list.classList.remove('is-measuring');
 
       if (tallest) {
-        list.style.setProperty('--project-card-h', tallest + 'px');
         list.style.setProperty('--project-page-h', tallest * PER_PAGE + 'px');
       }
     }
@@ -234,6 +228,8 @@
       if (pageStatus) {
         pageStatus.textContent = 'Page ' + (page + 1) + ' of ' + pages + '.';
       }
+
+      measureCard();
     }
 
     if (filterBox && chipBox) {

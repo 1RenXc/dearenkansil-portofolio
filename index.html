@@ -3,19 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dearen Kansil - Portofolio</title>
-<meta name="description" content="Portfolio of Dearen Kansil, security analyst focused on web application testing, network penetration testing, and log analysis.">
+<title>Dearen Kansil — Security Researcher &amp; Open-Source Tool Developer</title>
+<meta name="description" content="Security researcher building open-source tools for file integrity, detection, and forensics. Custom security tooling, assessment support, and hands-on training.">
 <meta name="author" content="Dearen Kansil">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0a0e14">
 
+<link rel="canonical" href="https://1renxc.github.io/dearenkansil-portofolio/">
+
 <meta property="og:type" content="website">
-<meta property="og:title" content="Dearen Kansil — Security Analyst">
-<meta property="og:description" content="Offensive security work: web app testing, network penetration testing, and log analysis.">
-<meta property="og:image" content="assets/img/profile-placeholder.svg">
+<meta property="og:site_name" content="Dearen Kansil">
+<meta property="og:url" content="https://1renxc.github.io/dearenkansil-portofolio/">
+<meta property="og:title" content="Dearen Kansil — Security Researcher &amp; Tool Developer">
+<meta property="og:description" content="I research how systems fail, then I build the tools that catch it. Open-source tooling for integrity, detection, and forensics.">
+<meta property="og:image" content="https://1renxc.github.io/dearenkansil-portofolio/assets/img/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dearen Kansil — Security Researcher and open-source tool developer">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dearen Kansil — Security Researcher &amp; Tool Developer">
+<meta name="twitter:description" content="I research how systems fail, then I build the tools that catch it. Open-source tooling for integrity, detection, and forensics.">
+<meta name="twitter:image" content="https://1renxc.github.io/dearenkansil-portofolio/assets/img/og-card.png">
 
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/style.css?v=1">
+<link rel="stylesheet" href="assets/css/style.css?v=2">
 </head>
 <body>
 
@@ -45,7 +57,8 @@
     </a>
     <nav class="nav__links" aria-label="Sections">
       <a href="#about">About</a>
-      <a href="#projects">Projects</a>
+      <a href="#tools">Projects</a>
+      <a href="#services">Services</a>
       <a href="#certificates">Certificates</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -64,14 +77,13 @@
     </div>
 
     <div class="hero__intro">
-      <p class="eyebrow reveal">Offensive Security &mdash; Penetration Testing</p>
+<p class="eyebrow reveal">Security Research &middot; Open-Source Tooling</p>
       <h1 class="hero__name reveal">Dearen<br>Kansil</h1>
-      <p class="hero__role reveal">Reconnaissance &middot; Vulnerability Assessment &middot; Exploitation</p>
+      <p class="hero__role reveal">Integrity Verification &middot; Detection &middot; Forensics</p>
       <p class="hero__bio reveal">
-        I'm focused on learning cybersecurity through hands-on practice - from reconnaissance
-        and network enumeration to web application security and Linux privilege escalation.
-        I use labs, CTFs, and personal projects to understand how vulnerabilities are
-        discovered, investigated, and documented.
+        I research how systems fail, then I build the tools that catch it. Most of my work starts as
+        offensive research - enumerating, exploiting, understanding what breaks - and ends as a defensive
+        tool anyone can run. Everything I ship is open source, documented, and free.
       </p>
 
       <ul class="socials reveal" aria-label="Social profiles">
@@ -82,9 +94,12 @@
       </ul>
 
       <div class="cta reveal">
-        <a class="btn btn--primary" href="#projects">View projects</a>
-        <a class="btn" href="#contact">Contact me</a>
-        <a class="btn" href="assets/cv.pdf" download id="cv-btn">Download CV</a>
+        <a class="btn btn--primary" href="#tools">Browse tools</a>
+        <a class="btn" href="#services">Work with me</a>
+        <a class="btn" href="https://github.com/1RenXc" target="_blank" rel="noopener noreferrer">
+          GitHub
+          <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -94,44 +109,51 @@
     <div class="wrap">
       <header class="section__head reveal">
         <h2><span class="section__num">01</span> About</h2>
-        <p class="section__note">what I actually do</p>
+        <p class="section__note">research &rarr; tooling</p>
       </header>
 
       <div class="about">
         <div class="about__text reveal">
           <p>
-            I'm an Informatics Engineering student focused on building practical
-            cybersecurity skills through hands-on labs, CTFs, and personal projects.
+            I'm an Informatics Engineering student working on offensive security. Most of what I know,
+            I learned by breaking things in labs, CTFs, and on my own infrastructure - enumerating
+            networks, testing web applications, and working through privilege escalation until I
+            understood not just that something failed, but why.
           </p>
           <p>
-            My current interests include network enumeration, reconnaissance, web application security,
-            Linux privilege escalation, and vulnerability assessment. I document what I learn along the
-            way - including how I investigate vulnerabilities, what went wrong, and what I learned from each challenge.
+            That research turned into tooling. Once I kept re-solving the same problems, I started
+            writing the tools instead - small, focused utilities that anyone can run against their own
+            systems. Everything is open source, because a detection tool nobody can inspect is just
+            another thing you have to trust blindly.
           </p>
           <p>
-            I'm currently building my foundation toward a career in offensive security while
-            continuing to strengthen my knowledge of networks, Linux, and security concepts.
+            I now work on both sides of that loop: building defensive tools and running assessment
+            support engagements. If you have a specific workflow that needs a tool, or you want to
+            learn offensive security properly rather than from a checklist, get in touch.
           </p>
         </div>
 
         <div class="about__focus reveal">
-          <h3 class="label">Focus</h3>
+          <h3 class="label">How I work</h3>
           <ol class="focus-list">
-            <li><span class="focus-list__k">01</span> Penetration Testing</li>
-            <li><span class="focus-list__k">02</span> Web Application Security</li>
-            <li><span class="focus-list__k">03</span> Network Security</li>
+            <li><span class="focus-list__k">01</span> Research &mdash; find what actually breaks</li>
+            <li><span class="focus-list__k">02</span> Build &mdash; write the tool that catches it</li>
+            <li><span class="focus-list__k">03</span> Document &mdash; open source, free to use</li>
           </ol>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section class="section" id="projects">
+  <!-- TOOLS & PROJECTS -->
+  <section class="section" id="tools">
     <div class="wrap">
       <header class="section__head reveal">
-        <h2><span class="section__num">02</span> Projects</h2>
+        <h2><span class="section__num">02</span> Tools &amp; Projects</h2>
+        <p class="section__note">free &middot; open source &middot; self-hosted</p>
       </header>
+
+      <a id="projects" class="anchor-alias" aria-hidden="true"></a>
 
       <div class="filters" id="filters" hidden>
         <span class="filters__label" id="filters-label">Filter</span>
@@ -142,12 +164,27 @@
       <div class="projects" id="projects-list">
 
         <article class="project" id="p-01">
-          <p class="project__id">P-01</p>
+          <p class="project__id">T-01</p>
           <div class="project__body">
-            <h3 class="project__title">ReCheck-Integrity</h3>
+            <div class="project__head">
+              <h3 class="project__title">ReCheck-Integrity</h3>
+              <span class="badge badge--stable">Stable</span>
+            </div>
             <p class="project__desc">
-             A Python CLI tool for generating and verifying file and directory integrity using cryptographic hashes, with support for SHA-256, MD5, baseline manifests, and recursive verification.
+              A Python CLI tool for generating and verifying file and directory integrity using
+              cryptographic hashes, with baseline manifests and recursive verification.
             </p>
+            <p class="tool__use">
+              <span class="tool__use-k">Use case</span>
+              Establish a known-good baseline, then prove whether anything on a host changed since.
+              Useful for forensics, compliance checks, and incident response triage.
+            </p>
+            <ul class="tool__feats">
+              <li>SHA-256 and MD5 hash algorithms</li>
+              <li>Baseline manifest generation</li>
+              <li>Recursive directory verification</li>
+              <li>Verification reporting</li>
+            </ul>
             <ul class="tags">
               <li>Python</li><li>Cybersecurity</li><li>Tools</li><li>Cryptography</li>
             </ul>
@@ -155,74 +192,67 @@
               <a href="https://github.com/1RenXc/ReCheck-Integrity">Repository <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg></a>
             </p>
           </div>
-          <p class="project__meta">2026 &middot; Solo Project</p>
+          <p class="project__meta">2026 &middot; Stable</p>
         </article>
 
         <article class="project" id="p-02">
-          <p class="project__id">P-02</p>
+          <p class="project__id">T-02</p>
           <div class="project__body">
-            <h3 class="project__title">Coming Soon</h3>
+            <div class="project__head">
+              <h3 class="project__title">Next tool</h3>
+              <span class="badge badge--planned">Planned</span>
+            </div>
             <p class="project__desc">
-             Coming Soon
-            </p>
-            <ul class="tags">
-              <li></li><li></li><li></li>
-            </ul>
-            <p class="project__links">
-              <a href="https://github.com/1RenXc/ReCheck-Integrity">Repository <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg></a>
+              In active research. Each tool here started as a problem I hit repeatedly during
+              assessment work, so this one will too &mdash; details land when it's usable.
             </p>
           </div>
-          <p class="project__meta">- &middot; -</p>
+          <p class="project__meta">- &middot; Planned</p>
         </article>
 
         <article class="project" id="p-03">
-          <p class="project__id">P-03</p>
+          <p class="project__id">T-03</p>
           <div class="project__body">
-            <h3 class="project__title">Coming Soon</h3>
+            <div class="project__head">
+              <h3 class="project__title">Next tool</h3>
+              <span class="badge badge--planned">Planned</span>
+            </div>
             <p class="project__desc">
-              Coming Soon
-            </p>
-            <ul class="tags">
-              <li></li><li></li><li></li>
-            </ul>
-            <p class="project__links">
-              <a href="https://github.com/1RenXc">Repository <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg></a>
+              In active research. Each tool here started as a problem I hit repeatedly during
+              assessment work, so this one will too &mdash; details land when it's usable.
             </p>
           </div>
-          <p class="project__meta">- &middot; -</p>
+          <p class="project__meta">- &middot; Planned</p>
         </article>
 
         <article class="project" id="p-04">
-          <p class="project__id">P-04</p>
+          <p class="project__id">T-04</p>
           <div class="project__body">
-            <h3 class="project__title">Coming Soon</h3>
+            <div class="project__head">
+              <h3 class="project__title">Next tool</h3>
+              <span class="badge badge--planned">Planned</span>
+            </div>
             <p class="project__desc">
-              Coming Soon
-            <ul class="tags">
-              <li></li><li></li><li></li>
-            </ul>
-            <p class="project__links">
-              <a href="https://github.com/1RenXc">Repository <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg></a>
+              In active research. Each tool here started as a problem I hit repeatedly during
+              assessment work, so this one will too &mdash; details land when it's usable.
             </p>
           </div>
-          <p class="project__meta">- &middot; -</p>
+          <p class="project__meta">- &middot; Planned</p>
         </article>
 
         <article class="project" id="p-05">
-          <p class="project__id">P-05</p>
+          <p class="project__id">T-05</p>
           <div class="project__body">
-            <h3 class="project__title">Coming Soon</h3>
+            <div class="project__head">
+              <h3 class="project__title">Next tool</h3>
+              <span class="badge badge--planned">Planned</span>
+            </div>
             <p class="project__desc">
-              Coming Soon
-            </p>
-            <ul class="tags">
-              <li></li><li></li><li></li>
-            </ul>
-            <p class="project__links">
-              <a href="https://github.com/1RenXc">Repository <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg></a>
+              In active research. Each tool here started as a problem I hit repeatedly during
+              assessment work, so this one will too &mdash; details land when it's usable.
             </p>
           </div>
-          <p class="project__meta">- &middot; -</p>
+          <p class="project__meta">- &middot; Planned</p>
         </article>
       </div>
 
@@ -245,11 +275,107 @@
     </div>
   </section>
 
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="wrap">
+      <header class="section__head reveal">
+        <h2><span class="section__num">03</span> Services</h2>
+        <p class="section__note">custom work alongside open source</p>
+      </header>
+
+      <div class="services">
+
+        <article class="service reveal">
+          <p class="service__id">S-01</p>
+          <div class="service__body">
+            <h3 class="service__title">Custom security tooling</h3>
+            <p class="service__desc">
+              A small, focused utility built around your actual workflow - not a repackaged
+              framework. Scoped tight, documented, and handed over as a repo you own.
+            </p>
+            <dl class="service__spec">
+              <div class="service__spec-row">
+                <dt>You get</dt>
+                <dd>Repository, documentation, and a handover session</dd>
+              </div>
+              <div class="service__spec-row">
+                <dt>Typical scope</dt>
+                <dd>Single-purpose CLI or script, agreed before work starts</dd>
+              </div>
+            </dl>
+          </div>
+          <a class="service__cta" href="mailto:dearenkansil@gmail.com?subject=Custom%20tool%20request%20-%20brief%20discussion">
+            Request
+            <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg>
+          </a>
+        </article>
+
+        <article class="service reveal">
+          <p class="service__id">S-02</p>
+          <div class="service__body">
+            <h3 class="service__title">Assessment support</h3>
+            <p class="service__desc">
+              Scoped web application and network testing with written findings. Useful when you
+              need a second set of eyes on an engagement or want findings you can hand to a team.
+            </p>
+            <dl class="service__spec">
+              <div class="service__spec-row">
+                <dt>You get</dt>
+                <dd>Documented findings with reproduction steps and remediation notes</dd>
+              </div>
+              <div class="service__spec-row">
+                <dt>Typical scope</dt>
+                <dd>Junior to mid-level scope, defined and agreed in writing first</dd>
+              </div>
+            </dl>
+          </div>
+          <a class="service__cta" href="mailto:dearenkansil@gmail.com?subject=Assessment%20support%20-%20scope%20discussion">
+            Request
+            <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg>
+          </a>
+        </article>
+
+        <article class="service reveal">
+          <p class="service__id">S-03</p>
+          <div class="service__body">
+            <h3 class="service__title">Training &amp; mentoring</h3>
+            <p class="service__desc">
+              Hands-on sessions built from real labs and CTFs, focused on understanding the
+              reasoning behind each step rather than memorising a checklist.
+            </p>
+            <dl class="service__spec">
+              <div class="service__spec-row">
+                <dt>You get</dt>
+                <dd>Lab walkthroughs, practice material, and room for your own questions</dd>
+              </div>
+              <div class="service__spec-row">
+                <dt>Typical scope</dt>
+                <dd>One-on-one or small group, beginner to intermediate</dd>
+              </div>
+            </dl>
+          </div>
+          <a class="service__cta" href="mailto:dearenkansil@gmail.com?subject=Training%20or%20mentoring%20-%20availability">
+            Request
+            <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg>
+          </a>
+        </article>
+
+      </div>
+
+      <ol class="process reveal" aria-label="How engagements work">
+        <li><span class="process__k">Brief</span><span class="process__v">you describe the problem</span></li>
+        <li><span class="process__k">Scope</span><span class="process__v">agreed in writing</span></li>
+        <li><span class="process__k">Build</span><span class="process__v">work, with updates</span></li>
+        <li><span class="process__k">Handover</span><span class="process__v">repo, docs, walkthrough</span></li>
+      </ol>
+    </div>
+  </section>
+
   <!-- CERTIFICATES -->
   <section class="section" id="certificates">
     <div class="wrap">
       <header class="section__head reveal">
-        <h2><span class="section__num">03</span> Certificates</h2>
+        <h2><span class="section__num">04</span> Certificates</h2>
         <p class="section__note">click a card to view it full</p>
       </header>
 
@@ -347,12 +473,12 @@
   <section class="section" id="contact">
     <div class="wrap">
       <header class="section__head reveal">
-        <h2><span class="section__num">04</span> Contact</h2>
+        <h2><span class="section__num">05</span> Contact</h2>
       </header>
 
       <p class="availability reveal">
         <span class="availability__dot" aria-hidden="true"></span>
-        Open to junior pentest &amp; analyst roles
+        Accepting custom tool requests
       </p>
 
       <div class="contact reveal">
@@ -365,6 +491,11 @@
           </button>
         </div>
         <p class="contact__note" id="copy-status" role="status"></p>
+
+        <p class="contact__hint">
+          Tell me what you're trying to do and what's getting in the way. If I can build it,
+          I'll tell you what it takes; if I can't, I'll say so rather than waste your time.
+        </p>
       </div>
 
       <ul class="socials socials--wide reveal" aria-label="Social profiles">
@@ -412,6 +543,6 @@
   </div>
 </dialog>
 
-<script src="assets/js/main.js?v=1" defer></script>
+<script src="assets/js/main.js?v=2" defer></script>
 </body>
 </html>
