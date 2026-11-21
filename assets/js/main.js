@@ -90,9 +90,8 @@
     '.section__head',
     '.section__lead',
     '.signal',
+    '.project',
     '.tool-frame',
-    '.feature-list',
-    '.use',
     '.steps',
     '.diagram',
     '.toolchain',
@@ -270,12 +269,8 @@
     updateActive();
   }
 
-  /* ---------- copy email ---------- */
+  /* ---------- clipboard ---------- */
 
-  var copyBtn = $('.copy');
-  var copyStatus = $('#copy-status');
-  var copyLabel = copyBtn && $('.copy__text', copyBtn);
-  var copyIcon = copyBtn && $('use', copyBtn);
   var resetTimer = null;
 
   function fallbackCopy(text) {
@@ -290,6 +285,22 @@
     document.body.removeChild(field);
     return ok;
   }
+
+  function copyText(text, done) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(
+        function () { done(true); },
+        function () { done(fallbackCopy(text)); }
+      );
+    } else {
+      done(fallbackCopy(text));
+    }
+  }
+
+  var copyBtn = $('.copy');
+  var copyStatus = $('#copy-status');
+  var copyLabel = copyBtn && $('.copy__text', copyBtn);
+  var copyIcon = copyBtn && $('use', copyBtn);
 
   function copyDone(ok, address) {
     if (!ok) {
@@ -313,14 +324,7 @@
   if (copyBtn) {
     copyBtn.addEventListener('click', function () {
       var address = copyBtn.getAttribute('data-copy') || '';
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(address).then(
-          function () { copyDone(true, address); },
-          function () { copyDone(fallbackCopy(address), address); }
-        );
-      } else {
-        copyDone(fallbackCopy(address), address);
-      }
+      copyText(address, function (ok) { copyDone(ok, address); });
     });
   }
 
@@ -389,6 +393,193 @@
     if (certClose) {
       certClose.addEventListener('click', closeCert);
     }
+  }
+
+  /* ---------- sheet dialogs ---------- */
+
+  function sheetDialog(dialog) {
+    if (!dialog || typeof dialog.showModal !== 'function') return null;
+
+    var opener = null;
+
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog) dialog.close();
+    });
+
+    dialog.addEventListener('close', function () {
+      document.body.classList.remove('menu-open');
+      if (opener) {
+        var target = opener;
+        opener = null;
+        target.focus();
+      }
+    });
+
+    var closer = $('[data-sheet-close]', dialog);
+    if (closer) closer.addEventListener('click', function () { dialog.close(); });
+
+    return function open(trigger) {
+      opener = trigger || null;
+      dialog.showModal();
+      document.body.classList.add('menu-open');
+    };
+  }
+
+  var openContact = sheetDialog($('#contact-dialog'));
+  var openProject = sheetDialog($('#project-dialog'));
+
+  if (openContact) {
+    $$('[data-contact-open]').forEach(function (trigger) {
+      trigger.addEventListener('click', function (event) {
+        event.preventDefault();
+        openContact(trigger);
+      });
+    });
+  }
+
+  var contactCopy = $('[data-contact-copy]');
+  var contactCopyText = $('[data-contact-copy-text]');
+  var contactStatus = $('#contact-status');
+  var contactReset = null;
+
+  if (contactCopy) {
+    contactCopy.addEventListener('click', function () {
+      var address = 'dearenkansil@gmail.com';
+      copyText(address, function (ok) {
+        if (!ok) {
+          if (contactStatus) contactStatus.textContent = 'Press Ctrl+C to copy the address.';
+          return;
+        }
+        if (contactCopyText) contactCopyText.textContent = 'Copied';
+        if (contactStatus) contactStatus.textContent = address + ' copied to clipboard.';
+        window.clearTimeout(contactReset);
+        contactReset = window.setTimeout(function () {
+          if (contactCopyText) contactCopyText.textContent = 'Copy address';
+          if (contactStatus) contactStatus.textContent = '';
+        }, 2200);
+      });
+    });
+  }
+
+  if (openProject) {
+    $$('[data-project-details]').forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        var slide = trigger.closest('[data-work-slide]');
+        var detail = slide && $('.project__detail', slide);
+        var name = slide && $('.project__name', slide);
+        var body = $('[data-project-dialog-body]');
+        var title = $('#project-dialog-title');
+
+        if (title) title.textContent = name ? name.textContent : 'Project';
+
+        if (body) {
+          body.innerHTML = '';
+          if (detail) {
+            var clone = detail.cloneNode(true);
+            clone.hidden = false;
+            clone.removeAttribute('hidden');
+            body.appendChild(clone);
+          }
+        }
+
+        openProject(trigger);
+      });
+    });
+  }
+
+  /* ---------- selected work rail ---------- */
+
+  var rail = $('[data-work-rail]');
+
+  if (rail) {
+    var slides = $$('[data-work-slide]', rail);
+    var prevBtn = $('[data-work-prev]');
+    var nextBtn = $('[data-work-next]');
+    var currentEl = $('[data-work-current]');
+    var totalEl = $('[data-work-total]');
+    var total = slides.length;
+    var index = 0;
+
+    function pad(value) { return value < 10 ? '0' + value : String(value); }
+
+    function renderRail() {
+      if (currentEl) currentEl.textContent = pad(index + 1);
+      if (totalEl) totalEl.textContent = pad(total);
+      if (prevBtn) {
+        prevBtn.hidden = total < 2;
+        prevBtn.disabled = index <= 0;
+      }
+      if (nextBtn) {
+        nextBtn.hidden = total < 2;
+        nextBtn.disabled = index >= total - 1;
+      }
+    }
+
+    function slideLeft(i) {
+      return slides[i].offsetLeft - slides[0].offsetLeft;
+    }
+
+    function goTo(i) {
+      if (!slides.length) return;
+      index = Math.max(0, Math.min(total - 1, i));
+      var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      rail.scrollTo({ left: slideLeft(index), behavior: calm ? 'auto' : 'smooth' });
+      renderRail();
+    }
+
+    var railTick = false;
+
+    rail.addEventListener('scroll', function () {
+      if (railTick) return;
+      railTick = true;
+      window.requestAnimationFrame(function () {
+        railTick = false;
+        var best = 0;
+        var bestDistance = Infinity;
+
+        slides.forEach(function (slide, i) {
+          var distance = Math.abs(slideLeft(i) - rail.scrollLeft);
+          if (distance < bestDistance) {
+            bestDistance = distance;
+            best = i;
+          }
+        });
+
+        if (best !== index) {
+          index = best;
+          renderRail();
+        }
+      });
+    }, { passive: true });
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { goTo(index - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { goTo(index + 1); });
+
+    rail.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        goTo(index + 1);
+      } else if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        goTo(index - 1);
+      } else if (event.key === 'Home') {
+        event.preventDefault();
+        goTo(0);
+      } else if (event.key === 'End') {
+        event.preventDefault();
+        goTo(total - 1);
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      rail.scrollLeft = slideLeft(index);
+    });
+
+    slides.forEach(function (slide, i) {
+      slide.setAttribute('aria-label', (i + 1) + ' of ' + total);
+    });
+
+    renderRail();
   }
 
   /* ---------- year ---------- */

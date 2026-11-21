@@ -86,7 +86,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/css/style.css?v=7">
+<link rel="stylesheet" href="assets/css/style.css?v=9">
 </head>
 <body>
 
@@ -203,35 +203,45 @@
   </section>
 
   <!-- SELECTED WORK -->
-  <section class="section" id="work">
+  <section class="section" id="work" aria-labelledby="work-title">
     <div class="wrap">
-      <header class="section__head" data-reveal>
+      <header class="section__head work__head" data-reveal>
         <p class="kicker">01 / selected work</p>
-        <h2>ReCheck-Integrity: file integrity checks.</h2>
-        <p class="section__note">Stable · 2026 · Python CLI</p>
+        <h2 id="work-title">Selected work.</h2>
+        <div class="work__nav">
+          <p class="work__count" aria-live="polite"><span data-work-current>01</span> / <span data-work-total>01</span></p>
+          <div class="work__buttons">
+            <button class="work__btn work__btn--prev" type="button" data-work-prev aria-label="Previous project" hidden>
+              <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg>
+            </button>
+            <button class="work__btn" type="button" data-work-next aria-label="Next project" hidden>
+              <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg>
+            </button>
+          </div>
+        </div>
       </header>
 
-      <p class="section__lead" data-reveal>Generate a known-good baseline, then prove whether anything on a host changed since.</p>
+      <div class="work__rail" data-work-rail tabindex="0" role="group" aria-roledescription="carousel" aria-label="Selected projects">
+        <article class="project" data-work-slide data-reveal role="group" aria-roledescription="slide" aria-label="1 of 1">
+          <div class="project__body">
+            <p class="project__meta">Python CLI · Stable · 2026</p>
+            <h3 class="project__name">ReCheck-Integrity</h3>
+            <p class="project__tagline">File integrity checks.</p>
+            <p class="project__lead">Generate a known-good baseline, then prove whether anything on a host changed since.</p>
+            <ul class="project__points">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-hash"/></svg>SHA-256 and MD5 recorded in the manifest</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg>Baseline manifests compared against every later run</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-tree"/></svg>Recursive verification: changed, added, vanished</li>
+            </ul>
+            <div class="project__actions">
+              <a class="btn" href="https://github.com/1RenXc/ReCheck-Integrity" target="_blank" rel="noopener noreferrer">Open repository <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <button class="btn" type="button" data-project-details>Details</button>
+            </div>
+          </div>
 
-      <div class="signal" data-reveal data-scene-wrap aria-hidden="true">
-        <div class="signal__head">
-          <span class="signal__label">integrity sweep</span>
-          <span class="signal__meta">baseline.json → verify</span>
-        </div>
-        <div class="signal__stage">
-          <canvas class="scene signal__scene" data-scene="chain"></canvas>
-          <svg class="signal__fallback" viewBox="0 0 1200 220" preserveAspectRatio="none" focusable="false">
-            <path d="M0 150h90l18-34 22 62 24-74 18 46 14-22h96l16-30 22 58 18-28h80l14 18h84l18-30 22 54 16-24h96" fill="none" stroke="rgba(236,234,225,.16)" stroke-width="1.4"/>
-            <circle cx="520" cy="108" r="4" fill="#e3a63f"/>
-            <circle cx="884" cy="128" r="4" fill="#e0655a"/>
-          </svg>
-          <span class="signal__tick signal__tick--start">baseline</span>
-          <span class="signal__tick signal__tick--end">verify</span>
-        </div>
-      </div>
-
-      <!-- Illustrative interface; replace the transcript with a real ReCheck-Integrity run when available. -->
-      <div class="tool-frame" data-reveal data-tilt role="img" aria-label="Example ReCheck-Integrity report: a baseline manifest of hashed files beside a verification result of unchanged, changed, and added files.">
+          <div class="project__visual">
+            <!-- Illustrative interface; replace the transcript with a real ReCheck-Integrity run when available. -->
+            <div class="tool-frame tool-frame--compact" role="img" aria-label="Example ReCheck-Integrity report: a baseline manifest of hashed files beside a verification result of unchanged, changed, and added files.">
         <div class="tool-frame__bar" aria-hidden="true">
           <span class="term__dots"><i></i><i></i><i></i></span>
           <span class="tool-frame__title">recheck — ./etc</span>
@@ -265,38 +275,41 @@
             <p class="pane__foot pane__foot--bad">Review required before deploy</p>
           </div>
         </div>
-      </div>
+            </div>
+          </div>
 
-      <div class="tool-grid">
-        <div class="features">
-          <p class="subhead">Tool capabilities</p>
-          <ul class="feature-list" data-reveal>
-            <li class="feature">
-              <span class="feature__icon" aria-hidden="true"><svg class="icon"><use href="#i-hash"/></svg></span>
-              <div><h3>SHA-256 and MD5</h3><p>Pick the algorithm your policy names, recorded in the manifest so the policy and the file agree.</p></div>
-            </li>
-            <li class="feature">
-              <span class="feature__icon" aria-hidden="true"><svg class="icon"><use href="#i-layers"/></svg></span>
-              <div><h3>Baseline manifests</h3><p>Write a snapshot once, then compare every later run against the same known-good state.</p></div>
-            </li>
-            <li class="feature">
-              <span class="feature__icon" aria-hidden="true"><svg class="icon"><use href="#i-tree"/></svg></span>
-              <div><h3>Recursive verification</h3><p>Walk a directory at any depth and report what changed, what was added, and what vanished.</p></div>
-            </li>
-            <li class="feature">
-              <span class="feature__icon" aria-hidden="true"><svg class="icon"><use href="#i-report"/></svg></span>
-              <div><h3>Readable reports</h3><p>A short, ordered result during triage: what changed, what was added, and what needs a look.</p></div>
-            </li>
-          </ul>
-        </div>
+          <div class="project__detail" hidden>
+            <p class="subhead">Tool capabilities</p>
+            <ul class="feature-list">
+              <li class="feature">
+                <span class="feature__icon" aria-hidden="true"><svg class="icon"><use href="#i-hash"/></svg></span>
+                <div><h3>SHA-256 and MD5</h3><p>Pick the algorithm your policy names, recorded in the manifest so the policy and the file agree.</p></div>
+              </li>
+              <li class="feature">
+                <span class="feature__icon" aria-hidden="true"><svg class="icon"><use href="#i-layers"/></svg></span>
+                <div><h3>Baseline manifests</h3><p>Write a snapshot once, then compare every later run against the same known-good state.</p></div>
+              </li>
+              <li class="feature">
+                <span class="feature__icon" aria-hidden="true"><svg class="icon"><use href="#i-tree"/></svg></span>
+                <div><h3>Recursive verification</h3><p>Walk a directory at any depth and report what changed, what was added, and what vanished.</p></div>
+              </li>
+              <li class="feature">
+                <span class="feature__icon" aria-hidden="true"><svg class="icon"><use href="#i-report"/></svg></span>
+                <div><h3>Readable reports</h3><p>A short, ordered result during triage: what changed, what was added, and what needs a look.</p></div>
+              </li>
+            </ul>
 
-        <aside class="use" data-reveal aria-label="Where the tool is used">
-          <p class="subhead">Use cases</p>
-          <div class="use__row"><h3>Forensics</h3><p>Establish what a host looked like before an incident, then show what moved.</p></div>
-          <div class="use__row"><h3>Compliance</h3><p>Keep a dated baseline and a verification record you can hand to an auditor.</p></div>
-          <div class="use__row"><h3>Incident triage</h3><p>Sort a noisy host into unchanged, changed, and new before you start digging.</p></div>
-          <a class="link" href="https://github.com/1RenXc/ReCheck-Integrity" target="_blank" rel="noopener noreferrer">Open the repository <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </aside>
+            <p class="subhead project__detail-head">Use cases</p>
+            <div class="use">
+              <div class="use__row"><h3>Forensics</h3><p>Establish what a host looked like before an incident, then show what moved.</p></div>
+              <div class="use__row"><h3>Compliance</h3><p>Keep a dated baseline and a verification record you can hand to an auditor.</p></div>
+              <div class="use__row"><h3>Incident triage</h3><p>Sort a noisy host into unchanged, changed, and new before you start digging.</p></div>
+            </div>
+            <a class="link" href="https://github.com/1RenXc/ReCheck-Integrity" target="_blank" rel="noopener noreferrer">Open the repository <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+        <!-- PROJECT BARU: salin satu <article class="project"> di atas, lalu ubah isinya.
+             Jumlah slide dan tombol next dihitung otomatis dari jumlah article. -->
       </div>
     </div>
   </section>
@@ -577,7 +590,7 @@
       <p class="close__lead" data-reveal>Tell me what you're trying to secure. If you need a scoped penetration test, a small tool, or a walkthrough, send the details. If I can help, I'll tell you what it takes; if I can't, I'll say so.</p>
 
       <div class="close__row" data-reveal>
-        <a class="btn btn--primary" href="mailto:dearenkansil@gmail.com?subject=Penetration%20testing%20or%20project%20enquiry">Email me <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--primary" href="mailto:dearenkansil@gmail.com?subject=Penetration%20testing%20or%20project%20enquiry" data-contact-open>Email me <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         <a class="email" href="mailto:dearenkansil@gmail.com">dearenkansil@gmail.com</a>
         <button class="copy" type="button" data-copy="dearenkansil@gmail.com" aria-label="Copy email address to clipboard">
           <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>
@@ -657,7 +670,44 @@
   </div>
 </dialog>
 
-<script src="assets/js/main.js?v=5" defer></script>
+<dialog class="sheet" id="contact-dialog" aria-labelledby="contact-title">
+  <div class="sheet__bar">
+    <p class="sheet__label">Contact</p>
+    <button class="sheet__close" type="button" data-sheet-close aria-label="Close contact panel">
+      <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+  </div>
+  <div class="sheet__body">
+    <h2 class="sheet__title" id="contact-title">Send an enquiry.</h2>
+    <p class="sheet__lead">Tell me what you're trying to secure: a scoped test, a small tool, or a walkthrough. The address is below either way.</p>
+    <p class="contact__address">dearenkansil@gmail.com</p>
+    <div class="sheet__actions">
+      <button class="btn btn--primary" type="button" data-contact-copy>
+        <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>
+        <span data-contact-copy-text>Copy address</span>
+      </button>
+      <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=dearenkansil@gmail.com&amp;su=Penetration%20testing%20or%20project%20enquiry" target="_blank" rel="noopener noreferrer">Open in Gmail</a>
+      <a class="btn" href="https://outlook.live.com/mail/0/deeplink/compose?to=dearenkansil@gmail.com&amp;subject=Penetration%20testing%20or%20project%20enquiry" target="_blank" rel="noopener noreferrer">Open in Outlook</a>
+    </div>
+    <a class="sheet__mailto" href="mailto:dearenkansil@gmail.com?subject=Penetration%20testing%20or%20project%20enquiry">Or open your mail app <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <p class="status" id="contact-status" role="status"></p>
+  </div>
+</dialog>
+
+<dialog class="sheet" id="project-dialog" aria-labelledby="project-dialog-title">
+  <div class="sheet__bar">
+    <p class="sheet__label">Project</p>
+    <button class="sheet__close" type="button" data-sheet-close aria-label="Close project details">
+      <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+  </div>
+  <div class="sheet__body">
+    <h2 class="sheet__title" id="project-dialog-title">Project</h2>
+    <div class="sheet__content" data-project-dialog-body></div>
+  </div>
+</dialog>
+
+<script src="assets/js/main.js?v=6" defer></script>
 <script type="module">
   const calm = window.matchMedia('(prefers-reduced-motion: reduce)');
   const canvases = Array.prototype.slice.call(document.querySelectorAll('canvas[data-scene]'));
