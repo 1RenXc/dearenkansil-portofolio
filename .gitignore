@@ -1,4 +1,8 @@
-# nothing to build — but keep local cruft out
+# Local tooling and screenshots
+.taste-skill/
+shots/
+
+# OS and editor cruft
 .DS_Store
 Thumbs.db
 *.log

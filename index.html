@@ -1,548 +1,706 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en" data-type="software">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dearen Kansil — Security Researcher &amp; Open-Source Tool Developer</title>
-<meta name="description" content="Security researcher building open-source tools for file integrity, detection, and forensics. Custom security tooling, assessment support, and hands-on training.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dearen Kansil — Penetration Tester &amp; Security Tool Developer</title>
+<meta name="description" content="Penetration tester and security tool developer. Web application and network testing, plus open-source tooling for integrity, detection, and forensics.">
 <meta name="author" content="Dearen Kansil">
 <meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0a0e14">
+<meta name="theme-color" content="#0b0c0b">
+<meta name="page-type" content="software">
+<meta name="site-kind" content="software">
 
-<link rel="canonical" href="https://1renxc.github.io/dearenkansil-portofolio/">
+<link rel="canonical" href="https://portofolio.renxcy.web.id/">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Dearen Kansil">
-<meta property="og:url" content="https://1renxc.github.io/dearenkansil-portofolio/">
-<meta property="og:title" content="Dearen Kansil — Security Researcher &amp; Tool Developer">
-<meta property="og:description" content="I research how systems fail, then I build the tools that catch it. Open-source tooling for integrity, detection, and forensics.">
-<meta property="og:image" content="https://1renxc.github.io/dearenkansil-portofolio/assets/img/og-card.png">
+<meta property="og:url" content="https://portofolio.renxcy.web.id/">
+<meta property="og:title" content="Dearen Kansil — Penetration Tester &amp; Security Tool Developer">
+<meta property="og:description" content="Penetration testing for web apps and networks, plus open-source tooling for integrity, detection, and forensics.">
+<meta property="og:image" content="https://portofolio.renxcy.web.id/assets/img/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Dearen Kansil — Security Researcher and open-source tool developer">
+<meta property="og:image:alt" content="Dearen Kansil — penetration tester and security tool developer">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Dearen Kansil — Security Researcher &amp; Tool Developer">
-<meta name="twitter:description" content="I research how systems fail, then I build the tools that catch it. Open-source tooling for integrity, detection, and forensics.">
-<meta name="twitter:image" content="https://1renxc.github.io/dearenkansil-portofolio/assets/img/og-card.png">
+<meta name="twitter:title" content="Dearen Kansil — Penetration Tester &amp; Security Tool Developer">
+<meta name="twitter:description" content="Penetration testing for web apps and networks, plus open-source security tooling.">
+<meta name="twitter:image" content="https://portofolio.renxcy.web.id/assets/img/og-card.png">
+<meta name="twitter:image:alt" content="Dearen Kansil — penetration tester and security tool developer">
 
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/style.css?v=2">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dearen Kansil",
+  "url": "https://portofolio.renxcy.web.id/",
+  "jobTitle": "Penetration Tester & Security Tool Developer",
+  "description": "Penetration tester and security tool developer. Web application and network testing, plus open-source tooling for integrity, detection, and forensics.",
+  "email": "mailto:dearenkansil@gmail.com",
+  "sameAs": [
+    "https://github.com/1RenXc",
+    "https://www.linkedin.com/in/dearen-otniel-kansil-071b44429/",
+    "https://www.instagram.com/_dzrenn",
+    "https://tryhackme.com/p/RenXc1"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Cyber Security 101 Learning path",
+      "credentialCategory": "Certificate",
+      "identifier": "THM-E7M6VHL8GP",
+      "dateCreated": "2026-11-07",
+      "url": "https://tryhackme.com/certificate/THM-E7M6VHL8GP",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "TryHackMe"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Pre Security Learning path",
+      "credentialCategory": "Certificate",
+      "identifier": "THM-MOSW0AT3QD",
+      "dateCreated": "2026-08-16",
+      "url": "https://tryhackme.com/certificate/THM-MOSW0AT3QD",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "TryHackMe"
+      }
+    }
+  ],
+  "knowsAbout": [
+    "Penetration testing",
+    "Web application security",
+    "Network enumeration",
+    "Linux privilege escalation",
+    "File integrity verification",
+    "Digital forensics"
+  ]
+}
+</script>
+
+<link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
+<script>document.documentElement.classList.add('m-enter');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/style.css?v=7">
 </head>
 <body>
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
   <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
   <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037c-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85c3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124a2.062 2.062 0 0 1 0 4.124zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
-  <symbol id="i-instagram" viewBox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 8 0 4 4 0 0 1-8 0"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-copy" viewBox="0 0 24 24"><path d="M9 2h9a3 3 0 0 1 3 3v11h-2V5a1 1 0 0 0-1-1H9V2Zm-4 4h9a3 3 0 0 1 3 3v11a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V9a3 3 0 0 1 3-3Zm0 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1H5Z"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M20.7 6.3a1 1 0 0 1 0 1.4l-9.5 9.5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.4L10.6 15 19.3 6.3a1 1 0 0 1 1.4 0Z"/></symbol>
-  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H6v11h11v-4h2v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></symbol>
-  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M12 15.4 4.6 8l1.4-1.4L12 12.6l6-6L19.4 8 12 15.4Z"/></symbol>
-  <symbol id="i-prev" viewBox="0 0 24 24"><path d="M14.6 5.6 8.2 12l6.4 6.4 1.4-1.4L11 12l5-5-1.4-1.4Z"/></symbol>
-  <symbol id="i-next" viewBox="0 0 24 24"><path d="M9.4 5.6 15.8 12l-6.4 6.4L8 17l5-5-5-5 1.4-1.4Z"/></symbol>
   <symbol id="i-close" viewBox="0 0 24 24"><path d="M6.4 5 12 10.6 17.6 5 19 6.4 13.4 12 19 17.6 17.6 19 12 13.4 6.4 19 5 17.6 10.6 12 5 6.4 6.4 5Z"/></symbol>
-  <symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 4h7v2.2H6.2V11H4V4Zm9 0h7v7h-2.2V6.2H13V4ZM4 13h2.2v4.8H11V20H4v-7Zm13.8 0H20v7h-7v-2.2h4.8V13Z"/></symbol>
+  <symbol id="i-hash" viewBox="0 0 24 24"><path d="M9 3 7 21M17 3l-2 18M4 9h17M3 15h17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m3 13 9 5 9-5M3 17.5l9 5 9-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-tree" viewBox="0 0 24 24"><path d="M4 5h6v4H4zM14 15h6v4h-6zM14 3h6v4h-6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 7h2v10h2M10 7h2v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-report" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6V3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 3v5h5M9 12h6M9 16h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-terminal" viewBox="0 0 24 24"><path d="M3 5h18v14H3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m7 9 3 3-3 3M13 15h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v5c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6l8-3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5V5.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
 </svg>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<div class="progress" aria-hidden="true"><span class="progress__bar" id="progress-bar"></span></div>
+<div class="progress" aria-hidden="true"><span></span></div>
 
-<header class="nav" id="top">
+<header class="nav">
   <div class="wrap nav__inner">
-    <a class="nav__brand" href="#top">
-      <span class="nav__mark" aria-hidden="true">DK</span>
-      <span class="nav__handle">Dearen Kansil</span>
+    <a class="brand" href="#top" aria-label="Dearen Kansil, back to top">
+      <span class="brand__mark" aria-hidden="true">DK</span>
+      <span class="brand__name">Dearen Kansil</span>
     </a>
+
     <nav class="nav__links" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#approach">Approach</a>
       <a href="#about">About</a>
-      <a href="#tools">Projects</a>
       <a href="#services">Services</a>
-      <a href="#certificates">Certificates</a>
       <a href="#contact">Contact</a>
     </nav>
+
+    <a class="btn nav__cta" href="#contact">Get in touch</a>
+
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="menu" id="menu" hidden>
+    <nav class="menu__links" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#approach">Approach</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn menu__cta" href="#contact">Get in touch</a>
+    <div class="menu__foot">
+      <a href="mailto:dearenkansil@gmail.com">dearenkansil@gmail.com</a>
+      <ul class="socials" aria-label="Social profiles">
+        <li><a href="https://github.com/1RenXc" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+        <li><a href="https://www.linkedin.com/in/dearen-otniel-kansil-071b44429/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+        <li><a href="https://www.instagram.com/_dzrenn" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+        <li><a href="https://tryhackme.com/p/RenXc1" target="_blank" rel="noopener noreferrer" aria-label="TryHackMe"><img src="assets/img/tryhackme.png" alt="" width="18" height="18" loading="lazy" decoding="async"></a></li>
+      </ul>
+    </div>
   </div>
 </header>
 
 <main id="main">
 
   <!-- HERO -->
-  <section class="hero wrap">
-    <div class="hero__portrait reveal">
-      <div class="hero__frame">
-        <img src="assets/img/Dearen.jpeg" alt="Portrait of Dearen Kansil" width="260" height="260">
+  <section class="hero" id="top" data-enter data-scene-wrap>
+    <svg class="hero__fallback" aria-hidden="true" focusable="false" viewBox="0 0 700 520" preserveAspectRatio="xMidYMid slice">
+      <g class="hero__fallback-lines">
+        <path d="M120 96 228 178 170 300 300 344 390 236 500 300 560 190 440 104 300 150 228 178"/>
+        <path d="M300 150 390 236M170 300 300 150M500 300 440 104M228 178 390 236M560 190 500 300"/>
+      </g>
+      <g class="hero__fallback-dots">
+        <circle cx="120" cy="96" r="3"/><circle cx="228" cy="178" r="3"/><circle cx="170" cy="300" r="4"/><circle cx="300" cy="344" r="3"/><circle cx="390" cy="236" r="3"/><circle cx="500" cy="300" r="3"/><circle cx="560" cy="190" r="3"/><circle cx="440" cy="104" r="3"/><circle cx="300" cy="150" r="3"/>
+        <circle cx="390" cy="236" r="5" class="hero__fallback-flag"/>
+      </g>
+    </svg>
+    <canvas class="hero__graph" id="hero-graph" data-scene="graph" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow" data-enter><img class="eyebrow__avatar" src="assets/img/Dearen.jpeg" alt="" width="28" height="28" decoding="async"><span class="eyebrow__dot" aria-hidden="true"></span>Pentester · offensive security</p>
+          <h1 data-enter="2"><span class="hero__name">Dearen<br>Kansil</span><span class="sr-only">, penetration tester and security tool developer</span></h1>
+          <p class="hero__role" data-enter="2" aria-hidden="true">Penetration tester &amp; security tool developer</p>
+          <p class="lead" data-enter="3">I test how systems break: web apps, networks, Linux privilege escalation. Then I build the open-source tools that catch it.</p>
+          <div class="actions" data-enter="4">
+            <a class="btn btn--primary" href="#work">View selected work <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn" href="#contact">Get in touch</a>
+          </div>
+          <ul class="hero__meta" data-enter="5">
+            <li>Web &amp; network pentesting</li>
+            <li>Python tooling</li>
+            <li>2026</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual" data-enter="3">
+          <div class="term" role="img" aria-label="Example ReCheck-Integrity session: a baseline is written, then verification reports three changed files and one unexpected addition.">
+            <div class="term__bar" aria-hidden="true">
+              <span class="term__dots"><i></i><i></i><i></i></span>
+              <span class="term__title">dearen@lab — zsh</span>
+              <span class="term__tag">example</span>
+            </div>
+            <pre class="term__body" aria-hidden="true"><code><span class="term-line term-baseline"><span class="t-prompt">$</span> recheck baseline ./etc --out baseline.json</span><span class="term-line term-baseline"><span class="t-dim">  hashing</span>   sha256</span><span class="term-line term-baseline"><span class="t-dim">  manifest</span>  baseline.json written</span><span class="term-line term-baseline">&nbsp;</span><span class="term-line"><span class="t-prompt">$</span> recheck verify ./etc --baseline baseline.json</span><span class="term-line"><span class="t-ok">  unchanged</span>  2,946 files</span><span class="term-line"><span class="t-warn">  changed</span>        3 files</span><span class="term-line"><span class="t-warn">  added</span>          1 file</span><span class="term-line term-files">&nbsp;</span><span class="term-line term-files">  <span class="t-warn">M</span>  /etc/ssh/sshd_config</span><span class="term-line term-files">  <span class="t-warn">M</span>  /etc/cron.d/nightly</span><span class="term-line term-files">  <span class="t-bad">+</span>  /etc/ld.so.preload</span><span class="term-line">&nbsp;</span><span class="term-line"><span class="t-bad">  1 unexpected addition. review before deploy.</span></span></code></pre>
+          </div>
+        </div>
       </div>
-      <p class="hero__handle">Dearen Kansil</p>
     </div>
+  </section>
 
-    <div class="hero__intro">
-<p class="eyebrow reveal">Security Research &middot; Open-Source Tooling</p>
-      <h1 class="hero__name reveal">Dearen<br>Kansil</h1>
-      <p class="hero__role reveal">Integrity Verification &middot; Detection &middot; Forensics</p>
-      <p class="hero__bio reveal">
-        I research how systems fail, then I build the tools that catch it. Most of my work starts as
-        offensive research - enumerating, exploiting, understanding what breaks - and ends as a defensive
-        tool anyone can run. Everything I ship is open source, documented, and free.
-      </p>
+  <!-- SELECTED WORK -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <header class="section__head" data-reveal>
+        <p class="kicker">01 / selected work</p>
+        <h2>ReCheck-Integrity: file integrity checks.</h2>
+        <p class="section__note">Stable · 2026 · Python CLI</p>
+      </header>
 
-      <ul class="socials reveal" aria-label="Social profiles">
-        <li><a href="https://github.com/1RenXc" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg></a></li>
-        <li><a href="https://www.linkedin.com/in/dearen-otniel-kansil-071b44429/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
-        <li><a href="https://www.instagram.com/_dzrenn" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
-        <li><a href="https://tryhackme.com/p/RenXc1" target="_blank" rel="noopener noreferrer" aria-label="TryHackMe"><img class="logo-img" src="assets/img/tryhackme.png" alt="" width="20" height="20" loading="lazy" decoding="async"></a></li>
-      </ul>
+      <p class="section__lead" data-reveal>Generate a known-good baseline, then prove whether anything on a host changed since.</p>
 
-      <div class="cta reveal">
-        <a class="btn btn--primary" href="#tools">Browse tools</a>
-        <a class="btn" href="#services">Work with me</a>
-        <a class="btn" href="https://github.com/1RenXc" target="_blank" rel="noopener noreferrer">
-          GitHub
-          <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg>
-        </a>
+      <div class="signal" data-reveal data-scene-wrap aria-hidden="true">
+        <div class="signal__head">
+          <span class="signal__label">integrity sweep</span>
+          <span class="signal__meta">baseline.json → verify</span>
+        </div>
+        <div class="signal__stage">
+          <canvas class="scene signal__scene" data-scene="chain"></canvas>
+          <svg class="signal__fallback" viewBox="0 0 1200 220" preserveAspectRatio="none" focusable="false">
+            <path d="M0 150h90l18-34 22 62 24-74 18 46 14-22h96l16-30 22 58 18-28h80l14 18h84l18-30 22 54 16-24h96" fill="none" stroke="rgba(236,234,225,.16)" stroke-width="1.4"/>
+            <circle cx="520" cy="108" r="4" fill="#e3a63f"/>
+            <circle cx="884" cy="128" r="4" fill="#e0655a"/>
+          </svg>
+          <span class="signal__tick signal__tick--start">baseline</span>
+          <span class="signal__tick signal__tick--end">verify</span>
+        </div>
+      </div>
+
+      <!-- Illustrative interface; replace the transcript with a real ReCheck-Integrity run when available. -->
+      <div class="tool-frame" data-reveal data-tilt role="img" aria-label="Example ReCheck-Integrity report: a baseline manifest of hashed files beside a verification result of unchanged, changed, and added files.">
+        <div class="tool-frame__bar" aria-hidden="true">
+          <span class="term__dots"><i></i><i></i><i></i></span>
+          <span class="tool-frame__title">recheck — ./etc</span>
+          <span class="tool-frame__state">verify</span>
+        </div>
+        <div class="tool-frame__body">
+          <div class="pane">
+            <p class="pane__head"><span>baseline.json</span><span>sha256</span></p>
+            <ul class="tree" aria-hidden="true">
+              <li><span class="tree__path">etc/ssh/sshd_config</span><span class="tree__hash">9f2c…a71d</span></li>
+              <li><span class="tree__path">etc/cron.d/nightly</span><span class="tree__hash">42be…c908</span></li>
+              <li><span class="tree__path">etc/hosts</span><span class="tree__hash">8a11…3d0c</span></li>
+              <li><span class="tree__path">etc/ld.so.conf</span><span class="tree__hash">6d0f…2b84</span></li>
+              <li><span class="tree__path">var/log/auth.log</span><span class="tree__hash">c07e…91b2</span></li>
+            </ul>
+            <p class="pane__foot">Recursive walk · hidden files included</p>
+          </div>
+
+          <div class="pane">
+            <p class="pane__head"><span>verify report</span><span>divergence</span></p>
+            <div class="report" aria-hidden="true">
+              <div class="report__row report__row--ok"><span>✓</span><span>unchanged</span><strong data-count="2946">2,946</strong></div>
+              <div class="report__row report__row--warn"><span>~</span><span>changed</span><strong data-count="3">3</strong></div>
+              <div class="report__row report__row--warn"><span>+</span><span>added</span><strong data-count="1">1</strong></div>
+            </div>
+            <ul class="findings" aria-hidden="true">
+              <li><span class="badge badge--warn">M</span> sshd_config</li>
+              <li><span class="badge badge--warn">M</span> cron.d/nightly</li>
+              <li><span class="badge badge--bad">+</span> ld.so.preload</li>
+            </ul>
+            <p class="pane__foot pane__foot--bad">Review required before deploy</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-grid">
+        <div class="features">
+          <p class="subhead">Tool capabilities</p>
+          <ul class="feature-list" data-reveal>
+            <li class="feature">
+              <span class="feature__icon" aria-hidden="true"><svg class="icon"><use href="#i-hash"/></svg></span>
+              <div><h3>SHA-256 and MD5</h3><p>Pick the algorithm your policy names, recorded in the manifest so the policy and the file agree.</p></div>
+            </li>
+            <li class="feature">
+              <span class="feature__icon" aria-hidden="true"><svg class="icon"><use href="#i-layers"/></svg></span>
+              <div><h3>Baseline manifests</h3><p>Write a snapshot once, then compare every later run against the same known-good state.</p></div>
+            </li>
+            <li class="feature">
+              <span class="feature__icon" aria-hidden="true"><svg class="icon"><use href="#i-tree"/></svg></span>
+              <div><h3>Recursive verification</h3><p>Walk a directory at any depth and report what changed, what was added, and what vanished.</p></div>
+            </li>
+            <li class="feature">
+              <span class="feature__icon" aria-hidden="true"><svg class="icon"><use href="#i-report"/></svg></span>
+              <div><h3>Readable reports</h3><p>A short, ordered result during triage: what changed, what was added, and what needs a look.</p></div>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="use" data-reveal aria-label="Where the tool is used">
+          <p class="subhead">Use cases</p>
+          <div class="use__row"><h3>Forensics</h3><p>Establish what a host looked like before an incident, then show what moved.</p></div>
+          <div class="use__row"><h3>Compliance</h3><p>Keep a dated baseline and a verification record you can hand to an auditor.</p></div>
+          <div class="use__row"><h3>Incident triage</h3><p>Sort a noisy host into unchanged, changed, and new before you start digging.</p></div>
+          <a class="link" href="https://github.com/1RenXc/ReCheck-Integrity" target="_blank" rel="noopener noreferrer">Open the repository <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="section section--surface" id="approach">
+    <div class="wrap">
+      <header class="section__head" data-reveal>
+        <p class="kicker">02 / approach</p>
+        <h2>The research loop.</h2>
+        <p class="section__note">research → tooling</p>
+      </header>
+
+      <p class="section__lead" data-reveal>Every engagement starts on the offensive side: enumerate the surface, reproduce the finding, build the smallest tool that catches it, document the result.</p>
+
+      <div class="method">
+        <ol class="steps" data-reveal>
+          <li><span class="steps__num">01</span><div><h3>Research phase</h3><p>Enumerate the surface, test the assumption, find what breaks.</p></div></li>
+          <li><span class="steps__num">02</span><div><h3>Reproduction</h3><p>Turn the finding into a repeatable case with a fixed input and a known result.</p></div></li>
+          <li><span class="steps__num">03</span><div><h3>Tool build</h3><p>Write the smallest tool that catches it, with no dependency you can't audit.</p></div></li>
+          <li><span class="steps__num">04</span><div><h3>Documentation</h3><p>Ship the README, the limits, and the reason it exists.</p></div></li>
+        </ol>
+
+        <figure class="diagram" data-reveal aria-label="The research loop: research, reproduce, build, document, and back to research.">
+          <canvas class="scene diagram__scene" data-scene="orbit" aria-hidden="true"></canvas>
+          <svg viewBox="0 0 480 400" role="img" aria-hidden="true" focusable="false">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0 10 5 0 10Z" fill="#e3a63f"/>
+              </marker>
+            </defs>
+
+            <path class="edge" d="M160 104h140"/>
+            <path class="edge" d="M384 144v112"/>
+            <path class="edge" d="M320 296H160"/>
+            <path class="edge" d="M96 256V144"/>
+
+            <path class="flow" d="M160 104h140" marker-end="url(#arrow)"/>
+            <path class="flow flow--2" d="M384 144v112" marker-end="url(#arrow)"/>
+            <path class="flow flow--3" d="M320 296H160" marker-end="url(#arrow)"/>
+            <path class="flow flow--4" d="M96 256V144" marker-end="url(#arrow)"/>
+
+            <g class="node">
+              <circle cx="120" cy="104" r="30"/>
+              <text class="num" x="120" y="109">01</text>
+              <text class="cap" x="120" y="52">Research</text>
+            </g>
+            <g class="node">
+              <circle cx="360" cy="104" r="30"/>
+              <text class="num" x="360" y="109">02</text>
+              <text class="cap" x="360" y="52">Reproduce</text>
+            </g>
+            <g class="node">
+              <circle cx="360" cy="296" r="30"/>
+              <text class="num" x="360" y="301">03</text>
+              <text class="cap" x="360" y="364">Build</text>
+            </g>
+            <g class="node">
+              <circle cx="120" cy="296" r="30"/>
+              <text class="num" x="120" y="301">04</text>
+              <text class="cap" x="120" y="364">Document</text>
+            </g>
+
+            <circle class="core" cx="240" cy="200" r="3"/>
+            <text class="core-label" x="240" y="222">the loop</text>
+          </svg>
+        </figure>
+      </div>
+
+      <div class="toolchain" data-reveal>
+        <p class="toolchain__label">Toolchain</p>
+        <ul>
+          <li><img src="assets/img/icons/python.svg" alt="" width="18" height="18" loading="lazy" decoding="async">Python</li>
+          <li><img src="assets/img/icons/linux.svg" alt="" width="18" height="18" loading="lazy" decoding="async">Linux</li>
+          <li><img src="assets/img/icons/gnubash.svg" alt="" width="18" height="18" loading="lazy" decoding="async">Bash</li>
+          <li><img src="assets/img/icons/git.svg" alt="" width="18" height="18" loading="lazy" decoding="async">Git</li>
+        </ul>
+        <a class="link toolchain__link" href="https://github.com/1RenXc/ReCheck-Integrity" target="_blank" rel="noopener noreferrer">Open the repository <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section class="section" id="about">
+  <section class="section section--paper" id="about">
     <div class="wrap">
-      <header class="section__head reveal">
-        <h2><span class="section__num">01</span> About</h2>
-        <p class="section__note">research &rarr; tooling</p>
+      <header class="section__head" data-reveal>
+        <p class="kicker">03 / about</p>
+        <h2>About</h2>
+        <p class="section__note">penetration testing · offensive security</p>
       </header>
 
       <div class="about">
-        <div class="about__text reveal">
-          <p>
-            I'm an Informatics Engineering student working on offensive security. Most of what I know,
-            I learned by breaking things in labs, CTFs, and on my own infrastructure - enumerating
-            networks, testing web applications, and working through privilege escalation until I
-            understood not just that something failed, but why.
-          </p>
-          <p>
-            That research turned into tooling. Once I kept re-solving the same problems, I started
-            writing the tools instead - small, focused utilities that anyone can run against their own
-            systems. Everything is open source, because a detection tool nobody can inspect is just
-            another thing you have to trust blindly.
-          </p>
-          <p>
-            I now work on both sides of that loop: building defensive tools and running assessment
-            support engagements. If you have a specific workflow that needs a tool, or you want to
-            learn offensive security properly rather than from a checklist, get in touch.
-          </p>
+        <figure class="portrait" data-reveal>
+          <img src="assets/img/Dearen.jpeg" alt="Portrait of Dearen Kansil" width="400" height="400" loading="lazy" decoding="async">
+        </figure>
+
+        <div class="about__body" data-reveal>
+          <p class="about__lead">I'm a penetration tester and Informatics Engineering student working on offensive security.</p>
+          <p>Most of what I know came from breaking things in labs, CTFs, and on my own infrastructure: enumerating networks, testing web applications, and working through privilege escalation until I understood the failure itself, component by component.</p>
+          <p>That research turned into tooling. Once I kept re-solving the same problems, I started writing the tools instead: small utilities anyone can run against their own systems. Everything is open source, because a detection tool nobody can inspect is just another thing you have to trust blindly.</p>
+        </div>
+      </div>
+
+      <div class="cred" data-reveal>
+        <p class="subhead">Credentials</p>
+        <div class="cred__grid">
+          <button class="cred__card" type="button" data-cert-open
+                  data-title="TryHackMe — Pre Security"
+                  data-meta="TryHackMe · 16 Aug 2026 · Learning path · ID THM-MOSW0AT3QD"
+                  data-verify="https://tryhackme.com/certificate/THM-MOSW0AT3QD">
+            <span class="cred__thumb">
+              <img src="assets/img/THM_Pre-Security.png" alt="" width="1083" height="766" loading="lazy" decoding="async">
+            </span>
+            <span class="cred__body">
+              <span class="cred__name">TryHackMe — Pre Security</span>
+              <span class="cred__meta">16 Aug 2026 · Learning path</span>
+              <span class="cred__action">View credential <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </span>
+          </button>
+
+          <button class="cred__card" type="button" data-cert-open
+                  data-title="TryHackMe — Cyber Security 101"
+                  data-meta="TryHackMe · 7 Nov 2026 · Learning path · ID THM-E7M6VHL8GP"
+                  data-verify="https://tryhackme.com/certificate/THM-E7M6VHL8GP">
+            <span class="cred__thumb cred__thumb--dark">
+              <img src="assets/img/THM_Cyber-Security-101.png" alt="" width="1530" height="930" loading="lazy" decoding="async">
+            </span>
+            <span class="cred__body">
+              <span class="cred__name">TryHackMe — Cyber Security 101</span>
+              <span class="cred__meta">7 Nov 2026 · Learning path</span>
+              <span class="cred__action">View credential <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </span>
+          </button>
         </div>
 
-        <div class="about__focus reveal">
-          <h3 class="label">How I work</h3>
-          <ol class="focus-list">
-            <li><span class="focus-list__k">01</span> Research &mdash; find what actually breaks</li>
-            <li><span class="focus-list__k">02</span> Build &mdash; write the tool that catches it</li>
-            <li><span class="focus-list__k">03</span> Document &mdash; open source, free to use</li>
-          </ol>
-        </div>
+        <a class="cred__profile" href="https://tryhackme.com/p/RenXc1" target="_blank" rel="noopener noreferrer">
+          <span class="cred__profile-logo">
+            <img src="assets/img/tryhackme.png" alt="" width="40" height="40" loading="lazy" decoding="async">
+          </span>
+          <span class="cred__profile-text">
+            <span class="cred__name">TryHackMe profile</span>
+            <span class="cred__meta">Rooms, labs, and the full path record</span>
+          </span>
+          <span class="cred__action">Open profile <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- TOOLS & PROJECTS -->
-  <section class="section" id="tools">
-    <div class="wrap">
-      <header class="section__head reveal">
-        <h2><span class="section__num">02</span> Tools &amp; Projects</h2>
-        <p class="section__note">free &middot; open source &middot; self-hosted</p>
-      </header>
-
-      <a id="projects" class="anchor-alias" aria-hidden="true"></a>
-
-      <div class="filters" id="filters" hidden>
-        <span class="filters__label" id="filters-label">Filter</span>
-        <div class="filters__chips" id="filters-chips" role="group" aria-labelledby="filters-label"></div>
-        <p class="sr-only" id="filter-status" role="status"></p>
-      </div>
-
-      <div class="projects" id="projects-list">
-
-        <article class="project" id="p-01">
-          <p class="project__id">T-01</p>
-          <div class="project__body">
-            <div class="project__head">
-              <h3 class="project__title">ReCheck-Integrity</h3>
-              <span class="badge badge--stable">Stable</span>
-            </div>
-            <p class="project__desc">
-              A Python CLI tool for generating and verifying file and directory integrity using
-              cryptographic hashes, with baseline manifests and recursive verification.
-            </p>
-            <p class="tool__use">
-              <span class="tool__use-k">Use case</span>
-              Establish a known-good baseline, then prove whether anything on a host changed since.
-              Useful for forensics, compliance checks, and incident response triage.
-            </p>
-            <ul class="tool__feats">
-              <li>SHA-256 and MD5 hash algorithms</li>
-              <li>Baseline manifest generation</li>
-              <li>Recursive directory verification</li>
-              <li>Verification reporting</li>
-            </ul>
-            <ul class="tags">
-              <li>Python</li><li>Cybersecurity</li><li>Tools</li><li>Cryptography</li>
-            </ul>
-            <p class="project__links">
-              <a href="https://github.com/1RenXc/ReCheck-Integrity">Repository <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg></a>
-            </p>
-          </div>
-          <p class="project__meta">2026 &middot; Stable</p>
-        </article>
-
-        <article class="project" id="p-02">
-          <p class="project__id">T-02</p>
-          <div class="project__body">
-            <div class="project__head">
-              <h3 class="project__title">Next tool</h3>
-              <span class="badge badge--planned">Planned</span>
-            </div>
-            <p class="project__desc">
-              In active research. Each tool here started as a problem I hit repeatedly during
-              assessment work, so this one will too &mdash; details land when it's usable.
-            </p>
-          </div>
-          <p class="project__meta">- &middot; Planned</p>
-        </article>
-
-        <article class="project" id="p-03">
-          <p class="project__id">T-03</p>
-          <div class="project__body">
-            <div class="project__head">
-              <h3 class="project__title">Next tool</h3>
-              <span class="badge badge--planned">Planned</span>
-            </div>
-            <p class="project__desc">
-              In active research. Each tool here started as a problem I hit repeatedly during
-              assessment work, so this one will too &mdash; details land when it's usable.
-            </p>
-          </div>
-          <p class="project__meta">- &middot; Planned</p>
-        </article>
-
-        <article class="project" id="p-04">
-          <p class="project__id">T-04</p>
-          <div class="project__body">
-            <div class="project__head">
-              <h3 class="project__title">Next tool</h3>
-              <span class="badge badge--planned">Planned</span>
-            </div>
-            <p class="project__desc">
-              In active research. Each tool here started as a problem I hit repeatedly during
-              assessment work, so this one will too &mdash; details land when it's usable.
-            </p>
-          </div>
-          <p class="project__meta">- &middot; Planned</p>
-        </article>
-
-        <article class="project" id="p-05">
-          <p class="project__id">T-05</p>
-          <div class="project__body">
-            <div class="project__head">
-              <h3 class="project__title">Next tool</h3>
-              <span class="badge badge--planned">Planned</span>
-            </div>
-            <p class="project__desc">
-              In active research. Each tool here started as a problem I hit repeatedly during
-              assessment work, so this one will too &mdash; details land when it's usable.
-            </p>
-          </div>
-          <p class="project__meta">- &middot; Planned</p>
-        </article>
-      </div>
-
-      <div class="pager" id="projects-nav" hidden>
-        <button class="pager__arrow" type="button" id="projects-prev" aria-label="Previous projects">
-          <svg class="ic" aria-hidden="true"><use href="#i-prev"/></svg>
-        </button>
-        <p class="pager__count">
-          <span id="projects-index">1</span><span class="pager__sep">/</span><span id="projects-total">1</span>
-        </p>
-        <button class="pager__arrow" type="button" id="projects-next" aria-label="Next projects">
-          <svg class="ic" aria-hidden="true"><use href="#i-next"/></svg>
-        </button>
-        <p class="sr-only" id="projects-page-status" role="status"></p>
-      </div>
-
-      <p class="projects__empty" id="projects-empty" hidden>
-        No project matches that tag.
-      </p>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
+<!-- SERVICES -->
   <section class="section" id="services">
     <div class="wrap">
-      <header class="section__head reveal">
-        <h2><span class="section__num">03</span> Services</h2>
-        <p class="section__note">custom work alongside open source</p>
+      <header class="section__head" data-reveal>
+        <p class="kicker">04 / services</p>
+        <h2>Services</h2>
+        <p class="section__note">pentesting · tooling · training</p>
       </header>
 
-      <div class="services">
+      <div class="service-intro">
+        <div class="service-intro__text">
+          <p class="section__lead" data-reveal>The portfolio comes first. When you need a focused engagement, these are the ways I can help.</p>
+          <p class="service-intro__note">Scope first, written down. Findings you can act on. A retest after remediation.</p>
+        </div>
 
-        <article class="service reveal">
-          <p class="service__id">S-01</p>
-          <div class="service__body">
-            <h3 class="service__title">Custom security tooling</h3>
-            <p class="service__desc">
-              A small, focused utility built around your actual workflow - not a repackaged
-              framework. Scoped tight, documented, and handed over as a repo you own.
-            </p>
-            <dl class="service__spec">
-              <div class="service__spec-row">
-                <dt>You get</dt>
-                <dd>Repository, documentation, and a handover session</dd>
-              </div>
-              <div class="service__spec-row">
-                <dt>Typical scope</dt>
-                <dd>Single-purpose CLI or script, agreed before work starts</dd>
-              </div>
-            </dl>
+        <div class="scope-card" data-reveal data-tilt role="img" aria-label="Example engagement scope: web application and network testing, written authorization first, findings and retest.">
+          <div class="scope-card__bar" aria-hidden="true">
+            <span class="term__dots"><i></i><i></i><i></i></span>
+            <span class="scope-card__title">engagement.md</span>
+            <span class="scope-card__tag">scope</span>
           </div>
-          <a class="service__cta" href="mailto:dearenkansil@gmail.com?subject=Custom%20tool%20request%20-%20brief%20discussion">
-            Request
-            <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg>
-          </a>
-        </article>
-
-        <article class="service reveal">
-          <p class="service__id">S-02</p>
-          <div class="service__body">
-            <h3 class="service__title">Assessment support</h3>
-            <p class="service__desc">
-              Scoped web application and network testing with written findings. Useful when you
-              need a second set of eyes on an engagement or want findings you can hand to a team.
-            </p>
-            <dl class="service__spec">
-              <div class="service__spec-row">
-                <dt>You get</dt>
-                <dd>Documented findings with reproduction steps and remediation notes</dd>
-              </div>
-              <div class="service__spec-row">
-                <dt>Typical scope</dt>
-                <dd>Junior to mid-level scope, defined and agreed in writing first</dd>
-              </div>
-            </dl>
+          <div class="scope-card__body" aria-hidden="true">
+            <div class="scope-card__row"><span>scope</span><strong>Web app + network</strong></div>
+            <div class="scope-card__row"><span>authorization</span><strong>In writing, first</strong></div>
+            <div class="scope-card__row"><span>deliverable</span><strong>Findings + retest</strong></div>
+            <div class="scope-card__row"><span>status</span><strong>Scoped per engagement</strong></div>
+            <div class="scope-card__visual" data-scene-wrap>
+              <canvas class="scene scope-card__scene" data-scene="terrain" aria-hidden="true"></canvas>
+              <svg class="scope-card__map" viewBox="0 0 320 90" aria-hidden="true" focusable="false">
+                <path d="M0 58h56l10-28 12 50 10-34 8 12h48l10-22 12 42 10-20h42l8-16 10 32 8-16h56" fill="none" stroke="#e3a63f" stroke-width="1.3" opacity=".75"/>
+                <circle cx="78" cy="58" r="2.5" fill="#e3a63f"/>
+                <circle cx="192" cy="40" r="2.5" fill="#e3a63f"/>
+                <circle cx="286" cy="52" r="2.5" fill="#e3a63f"/>
+              </svg>
+            </div>
           </div>
-          <a class="service__cta" href="mailto:dearenkansil@gmail.com?subject=Assessment%20support%20-%20scope%20discussion">
-            Request
-            <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg>
-          </a>
-        </article>
-
-        <article class="service reveal">
-          <p class="service__id">S-03</p>
-          <div class="service__body">
-            <h3 class="service__title">Training &amp; mentoring</h3>
-            <p class="service__desc">
-              Hands-on sessions built from real labs and CTFs, focused on understanding the
-              reasoning behind each step rather than memorising a checklist.
-            </p>
-            <dl class="service__spec">
-              <div class="service__spec-row">
-                <dt>You get</dt>
-                <dd>Lab walkthroughs, practice material, and room for your own questions</dd>
-              </div>
-              <div class="service__spec-row">
-                <dt>Typical scope</dt>
-                <dd>One-on-one or small group, beginner to intermediate</dd>
-              </div>
-            </dl>
-          </div>
-          <a class="service__cta" href="mailto:dearenkansil@gmail.com?subject=Training%20or%20mentoring%20-%20availability">
-            Request
-            <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg>
-          </a>
-        </article>
-
+        </div>
       </div>
 
-      <ol class="process reveal" aria-label="How engagements work">
-        <li><span class="process__k">Brief</span><span class="process__v">you describe the problem</span></li>
-        <li><span class="process__k">Scope</span><span class="process__v">agreed in writing</span></li>
-        <li><span class="process__k">Build</span><span class="process__v">work, with updates</span></li>
-        <li><span class="process__k">Handover</span><span class="process__v">repo, docs, walkthrough</span></li>
+      <div class="service-list" data-reveal>
+        <article class="service-row">
+          <div class="service-row__head">
+            <span class="service-row__icon" aria-hidden="true"><svg class="icon"><use href="#i-shield"/></svg></span>
+            <h3>Penetration testing</h3>
+            <p class="service-row__meta">Web apps · networks</p>
+          </div>
+          <div class="service-row__body">
+            <p>Scoped web application and network testing with written findings you can hand to a team.</p>
+            <ul>
+              <li>Reproduction steps</li>
+              <li>Remediation notes</li>
+              <li>Web app and network scope</li>
+            </ul>
+          </div>
+          <a class="link" href="mailto:dearenkansil@gmail.com?subject=Penetration%20testing">Request a pentest <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </article>
+
+        <article class="service-row">
+          <div class="service-row__head">
+            <span class="service-row__icon" aria-hidden="true"><svg class="icon"><use href="#i-terminal"/></svg></span>
+            <h3>Custom security tooling</h3>
+            <p class="service-row__meta">Small, focused utilities</p>
+          </div>
+          <div class="service-row__body">
+            <p>A small utility built around your actual workflow, not a repackaged framework.</p>
+            <ul>
+              <li>Repository you own</li>
+              <li>Documentation and handover</li>
+              <li>Scope agreed before work starts</li>
+            </ul>
+          </div>
+          <a class="link" href="mailto:dearenkansil@gmail.com?subject=Custom%20tool%20request">Request a tool <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </article>
+
+        <article class="service-row">
+          <div class="service-row__head">
+            <span class="service-row__icon" aria-hidden="true"><svg class="icon"><use href="#i-book"/></svg></span>
+            <h3>Training and mentoring</h3>
+            <p class="service-row__meta">Labs · CTFs · one-on-one</p>
+          </div>
+          <div class="service-row__body">
+            <p>Hands-on sessions built from real labs and CTFs, focused on the reasoning behind each step.</p>
+            <ul>
+              <li>Lab walkthroughs</li>
+              <li>Practice material</li>
+              <li>One-on-one or small group</li>
+            </ul>
+          </div>
+          <a class="link" href="mailto:dearenkansil@gmail.com?subject=Training%20and%20mentoring">Ask about training <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </article>
+      </div>
+
+      <ol class="service-flow" aria-label="How engagements work">
+        <li>Brief</li>
+        <li>Scope</li>
+        <li>Build</li>
+        <li>Handover</li>
       </ol>
     </div>
   </section>
 
-  <!-- CERTIFICATES -->
-  <section class="section" id="certificates">
+  <!-- CONTACT / CLOSE -->
+  <section class="closing" id="contact">
     <div class="wrap">
-      <header class="section__head reveal">
-        <h2><span class="section__num">04</span> Certificates</h2>
-        <p class="section__note">click a card to view it full</p>
-      </header>
-
-      <div class="certs reveal" id="certs">
-        <ol class="certs__track" id="certs-track">
-
-          <li class="certs__item" data-certs-item>
-            <button class="certs__card" type="button" data-certs-open
-                    data-title="TryHackMe - Pre Security"
-                    data-sub="TryHackme &middot; 2026 &middot; Learning Path Completion"
-                    data-id="&mdash;"
-                    data-verify="https://tryhackme.com/certificate/THM-MOSW0AT3QD">
-              <span class="certs__thumb">
-                <img class="certs__img" src="assets/img/THM_Pre-Security.png"
-                     alt="Certificate scan placeholder" width="640" height="453"
-                     loading="lazy" decoding="async">
-                <span class="certs__zoom">
-                  <svg class="ic ic--xs" aria-hidden="true"><use href="#i-expand"/></svg>
-                  View full
-                </span>
-              </span>
-              <span class="certs__body">
-                <span class="certs__name">TryHackMe - Pre Security</span>
-                <span class="certs__sub">TryHackMe &middot; 2026 &middot; Learning Path Completion</span>
-                <span class="certs__id">ID THM-MOSW0AT3QD<span class="mono"></span></span>
-              </span>
-            </button>
-          </li>
-
-          <li class="certs__item" data-certs-item>
-            <button class="certs__card" type="button" data-certs-open
-                    data-title="Credential name"
-                    data-sub="Issuing body &middot; 2025"
-                    data-id="&mdash;"
-                    data-verify="https://example.com">
-              <span class="certs__thumb">
-                <img class="certs__img" src="assets/img/cert-placeholder.svg"
-                     alt="Certificate scan placeholder" width="640" height="453"
-                     loading="lazy" decoding="async">
-                <span class="certs__zoom">
-                  <svg class="ic ic--xs" aria-hidden="true"><use href="#i-expand"/></svg>
-                  View full
-                </span>
-              </span>
-              <span class="certs__body">
-                <span class="certs__name">Credential name</span>
-                <span class="certs__sub">Issuing body &middot; 2025</span>
-                <span class="certs__id">ID <span class="mono">&mdash;</span></span>
-              </span>
-            </button>
-          </li>
-
-          <li class="certs__item" data-certs-item>
-            <button class="certs__card" type="button" data-certs-open
-                    data-title="Credential name"
-                    data-sub="Issuing body &middot; 2026"
-                    data-id="&mdash;"
-                    data-verify="https://example.com">
-              <span class="certs__thumb">
-                <img class="certs__img" src="assets/img/cert-placeholder.svg"
-                     alt="Certificate scan placeholder" width="640" height="453"
-                     loading="lazy" decoding="async">
-                <span class="certs__zoom">
-                  <svg class="ic ic--xs" aria-hidden="true"><use href="#i-expand"/></svg>
-                  View full
-                </span>
-              </span>
-              <span class="certs__body">
-                <span class="certs__name">Credential name</span>
-                <span class="certs__sub">Issuing body &middot; 2026</span>
-                <span class="certs__id">ID <span class="mono">&mdash;</span></span>
-              </span>
-            </button>
-          </li>
-
-          </ol>
-
-        <div class="pager" id="certs-nav" hidden>
-          <button class="pager__arrow" type="button" id="certs-prev" aria-label="Previous certificate">
-            <svg class="ic" aria-hidden="true"><use href="#i-prev"/></svg>
-          </button>
-          <p class="pager__count">
-            <span id="certs-index">1</span><span class="pager__sep">/</span><span id="certs-total">1</span>
-          </p>
-          <button class="pager__arrow" type="button" id="certs-next" aria-label="Next certificate">
-            <svg class="ic" aria-hidden="true"><use href="#i-next"/></svg>
-          </button>
-        </div>
-        <p class="sr-only" id="certs-status" role="status"></p>
+    <div class="close">
+      <div class="close__head" data-reveal>
+        <p class="kicker">05 / contact</p>
+        <svg class="close__signal" aria-hidden="true" focusable="false" viewBox="0 0 360 120">
+          <defs>
+            <pattern id="signal-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+              <path d="M24 0H0v24" fill="none" stroke="rgba(236,234,225,.07)" stroke-width="1"/>
+            </pattern>
+          </defs>
+          <rect width="360" height="120" fill="url(#signal-grid)"/>
+          <path d="M0 74h50l8-18 10 40 12-52 10 32 8-12h46l10-26 12 52 10-26h40l8 10h50l8-16 10 32 8-16h50"
+                fill="none" stroke="#e3a63f" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M0 74h50l8-18 10 40 12-52 10 32 8-12h46l10-26 12 52 10-26h40l8 10h50l8-16 10 32 8-16h50v120H0Z"
+                fill="rgba(227,166,63,.06)"/>
+          <path class="signal-flow" pathLength="100"
+                d="M0 74h50l8-18 10 40 12-52 10 32 8-12h46l10-26 12 52 10-26h40l8 10h50l8-16 10 32 8-16h50"
+                fill="none" stroke="#f0bb63" stroke-width="2.2" stroke-linecap="round"/>
+          <circle cx="150" cy="68" r="2.5" fill="#e3a63f"/>
+          <circle cx="264" cy="58" r="2.5" fill="#e3a63f"/>
+          <circle class="signal-ping" cx="264" cy="58" r="3" fill="#f0bb63"/>
+          <text x="6" y="112" fill="rgba(236,234,225,.4)" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1">INTEGRITY SIGNAL</text>
+        </svg>
       </div>
+      <h2>Project enquiries.</h2>
+      <p class="close__lead" data-reveal>Tell me what you're trying to secure. If you need a scoped penetration test, a small tool, or a walkthrough, send the details. If I can help, I'll tell you what it takes; if I can't, I'll say so.</p>
+
+      <div class="close__row" data-reveal>
+        <a class="btn btn--primary" href="mailto:dearenkansil@gmail.com?subject=Penetration%20testing%20or%20project%20enquiry">Email me <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="email" href="mailto:dearenkansil@gmail.com">dearenkansil@gmail.com</a>
+        <button class="copy" type="button" data-copy="dearenkansil@gmail.com" aria-label="Copy email address to clipboard">
+          <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>
+          <span class="copy__text">Copy</span>
+        </button>
+      </div>
+      <p class="status" id="copy-status" role="status"></p>
+
+      <p class="availability"><span aria-hidden="true"></span>Available for penetration testing</p>
     </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="wrap">
-      <header class="section__head reveal">
-        <h2><span class="section__num">05</span> Contact</h2>
-      </header>
-
-      <p class="availability reveal">
-        <span class="availability__dot" aria-hidden="true"></span>
-        Accepting custom tool requests
-      </p>
-
-      <div class="contact reveal">
-        <p class="contact__label">email</p>
-        <div class="contact__row">
-          <a class="contact__email" href="mailto:dearenkansil@gmail.com">dearenkansil@gmail.com</a>
-          <button class="copy" type="button" id="copy-btn" data-copy="dearenkansil@gmail.com" aria-label="Copy email address to clipboard">
-            <svg class="ic" aria-hidden="true"><use href="#i-copy"/></svg>
-            <span class="copy__text">Copy</span>
-          </button>
-        </div>
-        <p class="contact__note" id="copy-status" role="status"></p>
-
-        <p class="contact__hint">
-          Tell me what you're trying to do and what's getting in the way. If I can build it,
-          I'll tell you what it takes; if I can't, I'll say so rather than waste your time.
-        </p>
+    <footer class="site-foot">
+    <div class="footer">
+      <div class="footer__brand">
+        <a class="brand" href="#top" aria-label="Dearen Kansil, back to top">
+          <span class="brand__mark" aria-hidden="true">DK</span>
+          <span class="brand__name">Dearen Kansil</span>
+        </a>
+        <p>Penetration tester and security tool developer. Open-source tools for integrity, detection, and forensics.</p>
       </div>
 
-      <ul class="socials socials--wide reveal" aria-label="Social profiles">
-        <li><a href="https://github.com/1RenXc" target="_blank" rel="noopener noreferrer"><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg><span>GitHub</span></a></li>
-        <li><a href="https://www.linkedin.com/in/dearen-otniel-kansil-071b44429/" target="_blank" rel="noopener noreferrer"><svg class="ic" aria-hidden="true"><use href="#i-linkedin"/></svg><span>LinkedIn</span></a></li>
-        <li><a href="https://www.instagram.com/_dzrenn" target="_blank" rel="noopener noreferrer"><svg class="ic" aria-hidden="true"><use href="#i-instagram"/></svg><span>Instagram</span></a></li>
-        <li><a href="https://tryhackme.com/p/RenXc1" target="_blank" rel="noopener noreferrer"><img class="logo-img" src="assets/img/tryhackme.png" alt="" width="20" height="20" loading="lazy" decoding="async"><span>TryHackMe</span></a></li>
-      </ul>
-    </div>
-  </section>
+      <nav class="footer__col" aria-label="Work">
+        <p class="footer__head">Work</p>
+        <ul>
+          <li><a href="#work">Selected work</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="https://github.com/1RenXc/ReCheck-Integrity" target="_blank" rel="noopener noreferrer">Repository</a></li>
+        </ul>
+      </nav>
 
+      <nav class="footer__col" aria-label="Elsewhere">
+        <p class="footer__head">Elsewhere</p>
+        <ul>
+          <li><a href="https://github.com/1RenXc" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/dearen-otniel-kansil-071b44429/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/_dzrenn" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg>Instagram</a></li>
+          <li><a href="https://tryhackme.com/p/RenXc1" target="_blank" rel="noopener noreferrer"><img class="icon-img" src="assets/img/tryhackme.png" alt="" width="14" height="14" loading="lazy" decoding="async">TryHackMe</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__col">
+        <p class="footer__head">Contact</p>
+        <ul>
+          <li><a href="mailto:dearenkansil@gmail.com">Email</a></li>
+          <li><a href="#services">Penetration testing</a></li>
+          <li><a href="#services">Custom tooling</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="legal">
+      <p>© <span id="year">2026</span> Dearen Kansil</p>
+      <p>Static HTML · no trackers</p>
+    </div>
+
+    <p class="wordmark" aria-hidden="true">Dearen Kansil</p>
+    </footer>
+  </div>
+  </section>
 </main>
 
-<button class="to-top" id="to-top" type="button" aria-label="Back to top" hidden>
-  <svg class="ic" aria-hidden="true"><use href="#i-chevron"/></svg>
-</button>
-
-<dialog class="lightbox" id="certs-lightbox" aria-labelledby="lightbox-title">
-  <div class="lightbox__bar">
-    <p class="lightbox__count">
-      <span id="lightbox-index">1</span><span class="lightbox__sep">/</span><span id="lightbox-total">1</span>
-    </p>
-    <button class="lightbox__btn" type="button" id="lightbox-close" data-lb-close aria-label="Close preview">
-      <svg class="ic" aria-hidden="true"><use href="#i-close"/></svg>
+<dialog class="cert" id="cert-dialog" aria-labelledby="cert-title">
+  <div class="cert__bar">
+    <p class="cert__label">Credential</p>
+    <button class="cert__close" type="button" data-cert-close aria-label="Close credential">
+      <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
     </button>
   </div>
-
-  <div class="lightbox__stage">
-    <button class="lightbox__nav lightbox__nav--prev" type="button" id="lightbox-prev" aria-label="Previous certificate">
-      <svg class="ic" aria-hidden="true"><use href="#i-prev"/></svg>
-    </button>
-    <img class="lightbox__img" id="lightbox-img" src="assets/img/cert-placeholder.svg" alt="">
-    <button class="lightbox__nav lightbox__nav--next" type="button" id="lightbox-next" aria-label="Next certificate">
-      <svg class="ic" aria-hidden="true"><use href="#i-next"/></svg>
-    </button>
+  <div class="cert__stage">
+    <img id="cert-image" src="assets/img/THM_Pre-Security.png" alt="TryHackMe Pre Security certificate" width="1083" height="766" loading="lazy" decoding="async">
   </div>
-
-  <div class="lightbox__foot">
-    <h2 class="lightbox__title" id="lightbox-title">Certificate</h2>
-    <p class="lightbox__sub" id="lightbox-sub"></p>
-    <a class="lightbox__verify" id="lightbox-verify" href="https://example.com" target="_blank" rel="noopener noreferrer">
-      Verify credential
-      <svg class="ic ic--xs" aria-hidden="true"><use href="#i-external"/></svg>
-    </a>
+  <div class="cert__foot">
+    <h2 class="cert__title" id="cert-title">TryHackMe — Pre Security</h2>
+    <p class="cert__meta" id="cert-meta">TryHackMe · 16 Aug 2026 · ID THM-MOSW0AT3QD</p>
+    <a class="link" id="cert-verify" href="https://tryhackme.com/certificate/THM-MOSW0AT3QD" target="_blank" rel="noopener noreferrer">Verify credential <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
   </div>
 </dialog>
 
-<script src="assets/js/main.js?v=2" defer></script>
+<script src="assets/js/main.js?v=5" defer></script>
+<script type="module">
+  const calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const canvases = Array.prototype.slice.call(document.querySelectorAll('canvas[data-scene]'));
+  let pending = null;
+
+  function load() {
+    if (calm.matches) return Promise.resolve(null);
+    if (!pending) {
+      pending = import('./assets/js/scenes.js?v=3').catch(function () { return null; });
+    }
+    return pending;
+  }
+
+  function mount(canvas) {
+    load().then(function (scenes) {
+      if (scenes) scenes.mount(canvas);
+    });
+  }
+
+  function mountAll() {
+    if (calm.matches) return;
+    canvases.forEach(function (canvas) {
+      if (!canvas.dataset.sceneMounted) mount(canvas);
+    });
+  }
+
+  if (canvases.length) {
+    if ('IntersectionObserver' in window) {
+      const watcher = new IntersectionObserver(function (rows) {
+        rows.forEach(function (row) {
+          if (!row.isIntersecting) return;
+          watcher.unobserve(row.target);
+          mount(row.target);
+        });
+      }, { rootMargin: '320px 0px' });
+
+      canvases.forEach(function (canvas) { watcher.observe(canvas); });
+    } else {
+      mountAll();
+    }
+
+    if (calm.addEventListener) calm.addEventListener('change', mountAll);
+  }
+</script>
 </body>
 </html>
