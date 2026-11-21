@@ -86,7 +86,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/css/style.css?v=9">
+<link rel="stylesheet" href="assets/css/style.css?v=10">
 </head>
 <body>
 
@@ -189,13 +189,12 @@
         </div>
 
         <div class="hero__visual" data-enter="3">
-          <div class="term" role="img" aria-label="Example ReCheck-Integrity session: a baseline is written, then verification reports three changed files and one unexpected addition.">
+          <div class="term" role="img" aria-label="Terminal session: whoami, focus areas, tools, and availability for Dearen Kansil.">
             <div class="term__bar" aria-hidden="true">
               <span class="term__dots"><i></i><i></i><i></i></span>
               <span class="term__title">dearen@lab — zsh</span>
-              <span class="term__tag">example</span>
             </div>
-            <pre class="term__body" aria-hidden="true"><code><span class="term-line term-baseline"><span class="t-prompt">$</span> recheck baseline ./etc --out baseline.json</span><span class="term-line term-baseline"><span class="t-dim">  hashing</span>   sha256</span><span class="term-line term-baseline"><span class="t-dim">  manifest</span>  baseline.json written</span><span class="term-line term-baseline">&nbsp;</span><span class="term-line"><span class="t-prompt">$</span> recheck verify ./etc --baseline baseline.json</span><span class="term-line"><span class="t-ok">  unchanged</span>  2,946 files</span><span class="term-line"><span class="t-warn">  changed</span>        3 files</span><span class="term-line"><span class="t-warn">  added</span>          1 file</span><span class="term-line term-files">&nbsp;</span><span class="term-line term-files">  <span class="t-warn">M</span>  /etc/ssh/sshd_config</span><span class="term-line term-files">  <span class="t-warn">M</span>  /etc/cron.d/nightly</span><span class="term-line term-files">  <span class="t-bad">+</span>  /etc/ld.so.preload</span><span class="term-line">&nbsp;</span><span class="term-line"><span class="t-bad">  1 unexpected addition. review before deploy.</span></span></code></pre>
+            <pre class="term__body" aria-hidden="true"><code><span class="term-line"><span class="t-prompt">$</span> whoami</span><span class="term-line">dearen kansil</span><span class="term-line term-line--compact"></span><span class="term-line term-line--compact"><span class="t-prompt">$</span> cat focus.txt</span><span class="term-line term-line--compact"><span class="t-dim">web apps · networks · linux privilege escalation</span></span><span class="term-line term-line--compact"></span><span class="term-line term-line--compact"><span class="t-prompt">$</span> ls ~/tools</span><span class="term-line term-line--compact">recheck-integrity/</span><span class="term-line term-line--compact"></span><span class="term-line"><span class="t-prompt">$</span> ./status</span><span class="term-line"><span class="t-ok">open for project enquiries</span></span><span class="term-line"><span class="t-prompt">$</span> <span class="term__caret"></span></span></code></pre>
           </div>
         </div>
       </div>
@@ -241,40 +240,15 @@
 
           <div class="project__visual">
             <!-- Illustrative interface; replace the transcript with a real ReCheck-Integrity run when available. -->
-            <div class="tool-frame tool-frame--compact" role="img" aria-label="Example ReCheck-Integrity report: a baseline manifest of hashed files beside a verification result of unchanged, changed, and added files.">
-        <div class="tool-frame__bar" aria-hidden="true">
-          <span class="term__dots"><i></i><i></i><i></i></span>
-          <span class="tool-frame__title">recheck — ./etc</span>
-          <span class="tool-frame__state">verify</span>
-        </div>
-        <div class="tool-frame__body">
-          <div class="pane">
-            <p class="pane__head"><span>baseline.json</span><span>sha256</span></p>
-            <ul class="tree" aria-hidden="true">
-              <li><span class="tree__path">etc/ssh/sshd_config</span><span class="tree__hash">9f2c…a71d</span></li>
-              <li><span class="tree__path">etc/cron.d/nightly</span><span class="tree__hash">42be…c908</span></li>
-              <li><span class="tree__path">etc/hosts</span><span class="tree__hash">8a11…3d0c</span></li>
-              <li><span class="tree__path">etc/ld.so.conf</span><span class="tree__hash">6d0f…2b84</span></li>
-              <li><span class="tree__path">var/log/auth.log</span><span class="tree__hash">c07e…91b2</span></li>
-            </ul>
-            <p class="pane__foot">Recursive walk · hidden files included</p>
-          </div>
-
-          <div class="pane">
-            <p class="pane__head"><span>verify report</span><span>divergence</span></p>
-            <div class="report" aria-hidden="true">
-              <div class="report__row report__row--ok"><span>✓</span><span>unchanged</span><strong data-count="2946">2,946</strong></div>
-              <div class="report__row report__row--warn"><span>~</span><span>changed</span><strong data-count="3">3</strong></div>
-              <div class="report__row report__row--warn"><span>+</span><span>added</span><strong data-count="1">1</strong></div>
-            </div>
-            <ul class="findings" aria-hidden="true">
-              <li><span class="badge badge--warn">M</span> sshd_config</li>
-              <li><span class="badge badge--warn">M</span> cron.d/nightly</li>
-              <li><span class="badge badge--bad">+</span> ld.so.preload</li>
-            </ul>
-            <p class="pane__foot pane__foot--bad">Review required before deploy</p>
-          </div>
-        </div>
+            <div class="tool-frame tool-frame--compact" role="img" aria-label="A real recheck verify run on a lab directory: one file matches, two files changed, and one file was added.">
+              <div class="tool-frame__bar" aria-hidden="true">
+                <span class="term__dots"><i></i><i></i><i></i></span>
+                <span class="tool-frame__title">recheck — ./etc</span>
+                <span class="tool-frame__state">verify</span>
+              </div>
+              <!-- Output of a real run: recheck 1.0.3 (github.com/1RenXc/ReCheck-Integrity),
+                   Windows, on a lab copy at ./etc, captured 22 Nov 2026. Replace only with another real run. -->
+              <pre class="tool-frame__log" aria-hidden="true"><code><span class="term-line"><span class="t-prompt">$</span> recheck -v baseline.sha256</span><span class="term-line">ReCheck report for ./etc\hosts</span><span class="term-line"><span class="t-dim">Size: 87 B   Time: 0.00 s   Throughput: 102.1 KB/s</span></span><span class="term-line"><span class="t-dim">sha256: 92aa44c80045a3d7d22f24963ae96f1dae04091afda9e2541b225fb1f0900d78</span></span><span class="term-line"><span class="t-bad">MISMATCH: the file no longer matches the manifest, so the integrity of ./etc\hosts is not confirmed</span></span><span class="term-line"><span class="t-dim">  expected: 036a74dc630677dfcbd41875314e720281cae3351bda99b4007c0b0da398f803</span></span><span class="term-line"><span class="t-dim">  actual:   92aa44c80045a3d7d22f24963ae96f1dae04091afda9e2541b225fb1f0900d78</span></span><span class="term-line"></span><span class="term-line">ReCheck report for ./etc\sshd_config</span><span class="term-line"><span class="t-dim">Size: 86 B   Time: 0.00 s   Throughput: 111.4 KB/s</span></span><span class="term-line"><span class="t-dim">sha256: d612abf0544fe177ffa6f37f27c2df2a7a551ba150a5165de57ecc5c02390e53</span></span><span class="term-line"><span class="t-ok">MATCH: integrity confirmed</span></span><span class="term-line"></span><span class="term-line">ReCheck report for ./etc\cron.d\backup</span><span class="term-line"><span class="t-dim">Size: 152 B   Time: 0.00 s   Throughput: 211.6 KB/s</span></span><span class="term-line"><span class="t-dim">sha256: 7eb4edb9608dd8bfc05dd8bfcf01e58d4f009069f274e5b51f50def838dfdd8c</span></span><span class="term-line"><span class="t-bad">MISMATCH: the file no longer matches the manifest, so the integrity of ./etc\cron.d\backup is not confirmed</span></span><span class="term-line"><span class="t-dim">  expected: e38f244e82e60f29050ea9b2281dea31d6b60d7ae586c27858cba8c5480b3f53</span></span><span class="term-line"><span class="t-dim">  actual:   7eb4edb9608dd8bfc05dd8bfcf01e58d4f009069f274e5b51f50def838dfdd8c</span></span><span class="term-line"></span><span class="term-line">ReCheck done: 3 files verified in 0.01 seconds</span><span class="term-line"><span class="t-warn">ReCheck summary: 1 of 3 verified, 2 MISMATCHES, 1 NEW FILE</span></span><span class="term-line"><span class="t-bad">MISMATCH: ./etc\hosts</span></span><span class="term-line"><span class="t-bad">MISMATCH: ./etc\cron.d\backup</span></span><span class="term-line"><span class="t-warn">NEW FILE: ./etc\ld.so.preload</span></span></code></pre>
             </div>
           </div>
 
